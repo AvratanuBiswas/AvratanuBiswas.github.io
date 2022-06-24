@@ -21,6 +21,7 @@ Another curious being, who is interested in science, politics and happenings in 
 <br/>
 <hr width="50%" />
 ## Updates
+- :sparkles: Specklit Component
 - 🔨 Pre-release of [cats-and-codes](https://avratanubiswas.github.io/cats-and-codes/)✨ 🚀
 - Would you like to search for scientific keywords and obiatin it's related analytics from publications to authors? Here's link to one of my [*code for fun*](https://avratanubiswas.github.io/cats-and-codes/) project, a web-app, called [PubLit](https://share.streamlit.io/avratanubiswas/publit/main/publit.py) 🚀
 - Mar 2022: Two of my co-authored articles got accepted in [Plant Physiology](https://academic.oup.com/plphys) journal!🎉(details in the [Publications](https://avratanubiswas.github.io/publications/) page).
