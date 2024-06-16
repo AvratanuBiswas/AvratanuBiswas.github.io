@@ -152,3 +152,21 @@ $box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
 $navicon-width              : 28px;
 $navicon-height             : 4px;
 $global-transition          : all 0.2s ease-in-out;
+
+
+/* ==========================================================================
+   Footer Styles (added to match the dark theme)
+   ========================================================================== */
+
+$footer-background-color    : #212121;
+$footer-text-color          : #eaeaea;
+
+// .page__footer {
+//   background-color: $footer-background-color;
+//   color: $footer-text-color;
+//   padding: 10px 20px; /* Add some padding for better spacing */
+//   text-align: left; /* Left-align the text */
+//   width: 100%; /* Ensure it spans the full width */
+//   box-sizing: border-box; /* Ensure padding and border are included in the width */
+//   border: none; /* Remove any border that might be causing the line */
+// }
