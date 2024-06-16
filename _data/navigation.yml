@@ -2,7 +2,7 @@
 main:
   - title: "Research"
     url: /research/
-    exclude: true
+    exclude: false
 
   - title: "Publications"
     url: /publications/
@@ -28,4 +28,4 @@ main:
 
   - title: "Posts"
     url: /posts/
-    exclude: false
+    exclude: true
