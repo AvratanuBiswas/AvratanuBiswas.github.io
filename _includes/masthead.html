@@ -4,7 +4,6 @@
   <div class="masthead__inner-wrap">    
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <button class="nav-toggle"><div class="navicon"></div></button> 
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
           {% for link in site.data.navigation.main %}
@@ -34,16 +33,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  .nav-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
+    background-color: #212121; /* Ensures the background color is consistent */
+    padding: 0 10px; /* Adds some padding for better spacing */
   }
   .greedy-nav {
     display: flex;
     align-items: center;
-    flex-grow: 1;
   }
   .visible-links {
     display: flex;
@@ -51,7 +46,6 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    flex-grow: 1;
   }
   .visible-links li {
     margin-right: 20px;
@@ -71,7 +65,7 @@
   }
   .masthead__menu {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     width: 100%;
   }
 </style>
