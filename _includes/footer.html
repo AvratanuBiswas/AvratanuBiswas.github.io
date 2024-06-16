@@ -33,8 +33,13 @@
     background-color: #212121; /* Match the masthead background color */
     color: white; /* Ensure text is readable */
     padding: 10px 20px; /* Add some padding for better spacing */
-    text-align: right; /* Right-align the text */
+    text-align: left; /* Left-align the text */
     width: 100%; /* Ensure it spans the full width */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    overflow-x: hidden; /* Remove horizontal scrolling */
     border: none; /* Remove any border that might be causing the line */
+  }
+  body {
+    margin: 0; /* Ensure there is no default margin on the body causing overflow */
   }
 </style>
