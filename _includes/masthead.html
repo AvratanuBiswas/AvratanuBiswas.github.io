@@ -20,48 +20,58 @@
             {% endunless %}
           {% endfor %}                                
         </ul> 
-        {% if site.minimal_mistakes_skin2 %}
-          <span class="togglefa"><i class="fa fa-toggle-on" aria-hidden="true" onclick="node1=document.getElementById('theme_source');node2=document.getElementById('theme_source_2');if(node1.getAttribute('rel')=='stylesheet'){node1.setAttribute('rel', 'stylesheet alternate'); node2.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'dark');}else{node2.setAttribute('rel', 'stylesheet alternate'); node1.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'light');} return false;"></i></span>
-        {% endif %}
-        <style>
-          .togglefa{
-            display: inline-block;
-            color: white;
-          }
-          .masthead__inner-wrap {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-          }
-          .nav-toggle {
-            background: none;
-            border: none;
-            cursor: pointer;
-          }
-          .greedy-nav {
-            display: flex;
-            align-items: center;
-          }
-          .visible-links {
-            display: flex;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-          }
-          .visible-links li {
-            margin-right: 20px;
-          }
-          .masthead__menu-item a {
-            color: white;
-            text-decoration: none;
-          }
-          .masthead__menu-item--lg a {
-            font-size: 1.25em;
-          }
-        </style>
         <ul class="hidden-links hidden"></ul>
       </nav>
+      {% if site.minimal_mistakes_skin2 %}
+        <span class="togglefa"><i class="fa fa-toggle-on" aria-hidden="true" onclick="node1=document.getElementById('theme_source');node2=document.getElementById('theme_source_2');if(node1.getAttribute('rel')=='stylesheet'){node1.setAttribute('rel', 'stylesheet alternate'); node2.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'dark');}else{node2.setAttribute('rel', 'stylesheet alternate'); node1.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'light');} return false;"></i></span>
+      {% endif %}
     </div>
   </div>
 </div>
+
+<style>
+  .masthead__inner-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .greedy-nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+  .visible-links {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-grow: 1;
+  }
+  .visible-links li {
+    margin-right: 20px;
+  }
+  .masthead__menu-item a {
+    color: white;
+    text-decoration: none;
+  }
+  .masthead__menu-item--lg a {
+    font-size: 1.25em;
+  }
+  .togglefa {
+    color: white;
+    display: inline-block;
+    margin-left: auto;
+    cursor: pointer;
+  }
+  .masthead__menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+</style>
