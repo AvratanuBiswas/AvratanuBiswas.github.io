@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_bbfdcfd4e6ec8acffb65d53b786e18b2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            top: 50px; right: 50px; width: 250px; height: auto; 
+            background-color: white; border:2px solid grey; z-index:9999; font-size:14px;
+            padding: 10px;">
+<b>Legend</b><br>
+<i class="fa fa-map-marker fa-2x" style="color:red"></i> Born: Jalpaiguri<br>
+<i class="fa fa-map-marker fa-2x" style="color:darkred"></i> Lived in Kolkata<br>
+<i class="fa fa-map-marker fa-2x" style="color:orange"></i> MSc: University of Hyderabad<br>
+<i class="fa fa-map-marker fa-2x" style="color:green"></i> PhD: University of Szeged<br>
+<i class="fa fa-map-marker fa-2x" style="color:blue"></i> PhD: Vrije Universiteit Amsterdam<br>
+<i class="fa fa-map-marker fa-2x" style="color:purple"></i> Databutton: Oslo
+</div>
+    
+            <div class="folium-map" id="map_bbfdcfd4e6ec8acffb65d53b786e18b2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_bbfdcfd4e6ec8acffb65d53b786e18b2 = L.map(
+                "map_bbfdcfd4e6ec8acffb65d53b786e18b2",
+                {
+                    center: [40.0, 40.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 3,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_96ba21b489e8dedac001bb3096e0809f = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+    
+            var marker_3808baee93995714c101519fe35ed8c7 = L.marker(
+                [26.545, 88.7191],
+                {}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+    
+            var icon_ae822b30a99b4109d97ede0b19db2784 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3808baee93995714c101519fe35ed8c7.setIcon(icon_ae822b30a99b4109d97ede0b19db2784);
+        
+    
+        var popup_774793fa96b90c058e554c7bc1528c7d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e6c2cc0db1dc9c712e23e59ffbfffaea = $(`<div id="html_e6c2cc0db1dc9c712e23e59ffbfffaea" style="width: 100.0%; height: 100.0%;">Born in Jalpaiguri, West Bengal</div>`)[0];
+            popup_774793fa96b90c058e554c7bc1528c7d.setContent(html_e6c2cc0db1dc9c712e23e59ffbfffaea);
+        
+
+        marker_3808baee93995714c101519fe35ed8c7.bindPopup(popup_774793fa96b90c058e554c7bc1528c7d)
+        ;
+
+        
+    
+    
+            var marker_0e75d6223f506bee6da553cb22078542 = L.marker(
+                [22.5726, 88.3639],
+                {}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+    
+            var icon_8499f7de83ec77d6b28cbc9dc3a8b4e8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_0e75d6223f506bee6da553cb22078542.setIcon(icon_8499f7de83ec77d6b28cbc9dc3a8b4e8);
+        
+    
+        var popup_fe67e11483b83b56c887621107a3a619 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8fd01d3130c628fd4260158105250077 = $(`<div id="html_8fd01d3130c628fd4260158105250077" style="width: 100.0%; height: 100.0%;">Lived in Kolkata, West Bengal</div>`)[0];
+            popup_fe67e11483b83b56c887621107a3a619.setContent(html_8fd01d3130c628fd4260158105250077);
+        
+
+        marker_0e75d6223f506bee6da553cb22078542.bindPopup(popup_fe67e11483b83b56c887621107a3a619)
+        ;
+
+        
+    
+    
+            var marker_837d61f370387bb71e21d9d76283884d = L.marker(
+                [17.4456, 78.3498],
+                {}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+    
+            var icon_c09927c0214093f85f8c59672a7a76e9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_837d61f370387bb71e21d9d76283884d.setIcon(icon_c09927c0214093f85f8c59672a7a76e9);
+        
+    
+        var popup_d08dabb2f33683a382ca69e8db1333e0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_840d51f20b41b9c3d6f646d32cd49826 = $(`<div id="html_840d51f20b41b9c3d6f646d32cd49826" style="width: 100.0%; height: 100.0%;">Master of Science at University of Hyderabad</div>`)[0];
+            popup_d08dabb2f33683a382ca69e8db1333e0.setContent(html_840d51f20b41b9c3d6f646d32cd49826);
+        
+
+        marker_837d61f370387bb71e21d9d76283884d.bindPopup(popup_d08dabb2f33683a382ca69e8db1333e0)
+        ;
+
+        
+    
+    
+            var marker_b558a0817edf452c503cd09a80f68c9d = L.marker(
+                [46.253, 20.1414],
+                {}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+    
+            var icon_7fcb102e0a883995aa0352b4f4c015fc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b558a0817edf452c503cd09a80f68c9d.setIcon(icon_7fcb102e0a883995aa0352b4f4c015fc);
+        
+    
+        var popup_59541b2802e4a9c721fa5f203f78a804 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0112a3cd1109613b9bc8273f7de2ebb8 = $(`<div id="html_0112a3cd1109613b9bc8273f7de2ebb8" style="width: 100.0%; height: 100.0%;">Pursued PhD at University of Szeged</div>`)[0];
+            popup_59541b2802e4a9c721fa5f203f78a804.setContent(html_0112a3cd1109613b9bc8273f7de2ebb8);
+        
+
+        marker_b558a0817edf452c503cd09a80f68c9d.bindPopup(popup_59541b2802e4a9c721fa5f203f78a804)
+        ;
+
+        
+    
+    
+            var marker_b2ea76392057972d928529a884eba99f = L.marker(
+                [52.333, 4.866],
+                {}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+    
+            var icon_5f7518821715541b796a4a406bc8b46a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b2ea76392057972d928529a884eba99f.setIcon(icon_5f7518821715541b796a4a406bc8b46a);
+        
+    
+        var popup_c98f918e080bb50a7e4cec5e501377ff = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5acf96fb397f09ea77aa9185da8287a5 = $(`<div id="html_5acf96fb397f09ea77aa9185da8287a5" style="width: 100.0%; height: 100.0%;">Pursued PhD at Vrije Universiteit Amsterdam</div>`)[0];
+            popup_c98f918e080bb50a7e4cec5e501377ff.setContent(html_5acf96fb397f09ea77aa9185da8287a5);
+        
+
+        marker_b2ea76392057972d928529a884eba99f.bindPopup(popup_c98f918e080bb50a7e4cec5e501377ff)
+        ;
+
+        
+    
+    
+            var marker_5b4b7577a13a54c24ca39c9eb3bb4c1a = L.marker(
+                [59.9139, 10.7522],
+                {}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+    
+            var icon_1bff84c4ac33d18a4d71156db753bf7c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_5b4b7577a13a54c24ca39c9eb3bb4c1a.setIcon(icon_1bff84c4ac33d18a4d71156db753bf7c);
+        
+    
+        var popup_f91fdaa1966ca3e4900941e0f3b71b84 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7debe250de0243951d4510b82914de82 = $(`<div id="html_7debe250de0243951d4510b82914de82" style="width: 100.0%; height: 100.0%;">Working at Databutton in Oslo</div>`)[0];
+            popup_f91fdaa1966ca3e4900941e0f3b71b84.setContent(html_7debe250de0243951d4510b82914de82);
+        
+
+        marker_5b4b7577a13a54c24ca39c9eb3bb4c1a.bindPopup(popup_f91fdaa1966ca3e4900941e0f3b71b84)
+        ;
+
+        
+    
+    
+            var poly_line_e0d30df0a92ba7c0ccd4b6873e1c9942 = L.polyline(
+                [[26.62134758087285, 89.36498370936317], [26.67351154111507, 89.66576902386987], [25.60190006947047, 88.57305767129697], [25.33093077755344, 87.88541464790231], [24.810913707918534, 88.31286322980209], [24.417542288222748, 89.42124664574025], [24.41118705372728, 88.51786171731733], [23.269136610310866, 88.72928567380566], [22.540733223861803, 88.47213883369164], [23.17080634231752, 88.51716553550497]],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": "8, 15", "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+    
+            var poly_line_54a3d795d43a939adb8884fe73993649 = L.polyline(
+                [[22.055886952517366, 88.1209683508603], [22.167782715516083, 87.10784743049912], [21.240230335329706, 85.82253097459183], [21.033442660216142, 85.33632386104613], [20.8467143297992, 83.95829302173017], [20.27502012431261, 83.53465615071104], [18.74114766222234, 82.63785439384472], [18.450653211784573, 80.90152109876719], [18.11407493437808, 79.93540242096117], [17.641610490272303, 79.25525656421242]],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": "8, 15", "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+    
+            var poly_line_83e61d2a9cd62b0a903dd97b262519b8 = L.polyline(
+                [[16.55018770858995, 77.62622100967332], [21.328614077210553, 72.00832644875281], [23.667474164061645, 64.9875029326026], [27.21679303763381, 58.97855094429059], [29.79362209297939, 53.11766718036065], [33.43405693971642, 46.57127833272481], [36.82985639780821, 39.36889961558795], [40.569766455761744, 33.69554870308607], [43.084386579197016, 26.262499457049554], [45.57400245868481, 19.883534333645933]],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": "8, 15", "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+    
+            var poly_line_cf0a8268fe73f4e213952f81eb073c79 = L.polyline(
+                [[46.705229975687935, 20.037306264456163], [47.16339635295577, 19.155430171319036], [46.92434133086257, 17.260892759292723], [47.562937851544206, 15.329270291395975], [49.061266194081774, 13.30524465586469], [49.5741707963318, 11.13312255479268], [50.11542765755262, 9.945355875613112], [51.132268990431555, 8.120789592922948], [51.51401715822017, 6.685487025549899], [53.34963219995419, 4.765990501297284]],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": "8, 15", "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+    
+            var poly_line_ece05f8dff510d14c0a0729f5b14ce04 = L.polyline(
+                [[51.99946457930554, 4.417637888470049], [53.43370972165785, 5.033934162993915], [53.415519602626254, 6.76349519629002], [54.64505445922838, 5.783981780245327], [56.309471065699896, 6.882588256929861], [57.20593336605904, 7.967327674006763], [56.00639380412047, 8.687476798775611], [58.74588864924938, 9.178070724706604], [58.89819363778938, 9.145202780991712], [60.39969009479575, 11.013587387883172]],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": "8, 15", "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+    
+            var polygon_9e059e6e90eeb8c3a2459ebb7a22a066 = L.polygon(
+                [[35.0, 68.0], [35.0, 97.0], [5.0, 97.0], [5.0, 68.0]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+    
+            var polygon_6a6f678a93e1eea205978dc8eb6d1261 = L.polygon(
+                [[48.0, 16.0], [48.0, 23.0], [44.0, 23.0], [44.0, 16.0]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+    
+            var polygon_9a5c422fcb14e7f3fa532d6d3e2f628e = L.polygon(
+                [[54.0, 3.0], [54.0, 8.0], [50.0, 8.0], [50.0, 3.0]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+    
+            var polygon_3bada3b586ad19b95405e211124ff0d2 = L.polygon(
+                [[62.0, 5.0], [62.0, 12.0], [58.0, 12.0], [58.0, 5.0]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+    
+            var polygon_f55a8cc0f4076a56de9d5b3eba8e2aaf = L.polygon(
+                [[62.0, 5.0], [62.0, 12.0], [58.0, 12.0], [58.0, 5.0]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_bbfdcfd4e6ec8acffb65d53b786e18b2);
+        
+</script>
+</html>
