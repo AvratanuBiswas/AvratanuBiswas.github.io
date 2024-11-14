@@ -23,7 +23,9 @@ author_profile: false
 
 ### Latest YouTube Videos
 
-<!-- YOUTUBE:START --><table><tr><td><a href="https://www.youtube.com/watch?v=6QGQpvVOyM8"><img width="140px" src="https://i.ytimg.com/vi/6QGQpvVOyM8/mqdefault.jpg"></a></td>
+<!-- YOUTUBE:START --><table><tr><td><a href="https://www.youtube.com/watch?v=0xWvm1XR0xo"><img width="140px" src="https://i.ytimg.com/vi/0xWvm1XR0xo/mqdefault.jpg"></a></td>
+<td><a href="https://www.youtube.com/watch?v=0xWvm1XR0xo">Live building an app using Databutton with Avra and Viral</a><br/>Nov 13, 2024</td></tr></table>
+<table><tr><td><a href="https://www.youtube.com/watch?v=6QGQpvVOyM8"><img width="140px" src="https://i.ytimg.com/vi/6QGQpvVOyM8/mqdefault.jpg"></a></td>
 <td><a href="https://www.youtube.com/watch?v=6QGQpvVOyM8">AI AGENTS simplified in 60 Seconds  #aiagents #ai #aicode  #aiagent #aiappdevelopment #aicode</a><br/>Nov 5, 2024</td></tr></table>
 <table><tr><td><a href="https://www.youtube.com/watch?v=SFhGqmQ6uFk"><img width="140px" src="https://i.ytimg.com/vi/SFhGqmQ6uFk/mqdefault.jpg"></a></td>
 <td><a href="https://www.youtube.com/watch?v=SFhGqmQ6uFk">Simplest Way to Build AI Agents Explained &lpar; And use them in Your Full Stack APPS !&rpar;</a><br/>Nov 1, 2024</td></tr></table>
@@ -31,8 +33,6 @@ author_profile: false
 <td><a href="https://www.youtube.com/watch?v=GiAqN402Kgs">&lpar;Not Just Hype!&rpar; Build a Multi-Agent AI App with Just Prompts? Watch Live—A Real Backend &amp; Slick UI</a><br/>Oct 26, 2024</td></tr></table>
 <table><tr><td><a href="https://www.youtube.com/watch?v=HEySHFKMocQ"><img width="140px" src="https://i.ytimg.com/vi/HEySHFKMocQ/mqdefault.jpg"></a></td>
 <td><a href="https://www.youtube.com/watch?v=HEySHFKMocQ">Avra Live Stream</a><br/>Oct 25, 2024</td></tr></table>
-<table><tr><td><a href="https://www.youtube.com/watch?v=lrDkojtnF4o"><img width="140px" src="https://i.ytimg.com/vi/lrDkojtnF4o/mqdefault.jpg"></a></td>
-<td><a href="https://www.youtube.com/watch?v=lrDkojtnF4o">Build Multi-Agent AI Apps in 50 Lines | OpenAI Swarm Tutorial  #coding #ai #aiagents #nocode</a><br/>Oct 24, 2024</td></tr></table>
 <!-- YOUTUBE:END -->
 
 
