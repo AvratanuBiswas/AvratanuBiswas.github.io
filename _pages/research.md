@@ -1,8 +1,9 @@
 ---
 layout: archive
-title: "Research"
+title: "Research - PhD in Biophysics"
 permalink: /research/
-excerpt: "Avratanu Biswas"
+excerpt: "PhD research in photosynthesis, energy transfer, and cyanobacteria. Marie Curie Fellow. 10+ peer-reviewed publications."
+description: "Avratanu Biswas' PhD research in Biophysics focused on picosecond-scale energy transfer in cyanobacterial photosynthesis using time-resolved spectroscopy and kinetic modeling. Marie Curie Early-stage Researcher, VU Amsterdam & Szeged."
 author_profile: true
 marp: false
 ---

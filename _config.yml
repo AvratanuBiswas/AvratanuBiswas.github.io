@@ -12,14 +12,14 @@ minimal_mistakes_skin2   : "dark"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Home"
-title_separator          : "-"
+title                    : "Avratanu Biswas"
+title_separator          : "|"
 name                     : &name "Avratanu Biswas"
-description              : &description "Growth Engineer at Riff | PhD Biophysics"
+description              : &description "Growth Engineer at Riff building analytics pipelines and growth systems. PhD in Biophysics from VU Amsterdam. Experimentation, data, and engineering."
 url                      : https://avratanubiswas.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "AvratanuBiswas/AvratanuBiswas.github.io"
-teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
+teaser                   : "profile.jpg"  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : true 
 words_per_minute         : 160
 future                   : false
@@ -62,18 +62,22 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : &twitter "Avra_b"
 facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Open Graph/Twitter default site image
+og_image                 : "author_avatar/Avra-2 copy.jpg"  # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  type                   : "Person"
+  name                   : "Avratanu Biswas"
+  links:
+    - "https://twitter.com/Avra_b"
+    - "https://www.linkedin.com/in/avratanu-biswas-708616b7"
+    - "https://github.com/avrabyt"
+    - "https://scholar.google.com/citations?user=bTzfXH0AAAAJ"
 
 
 # Analytics

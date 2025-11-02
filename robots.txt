@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://avratanubiswas.github.io/sitemap.xml
+

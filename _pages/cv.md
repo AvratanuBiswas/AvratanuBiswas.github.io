@@ -1,7 +1,9 @@
 ---
 layout: archive
-title: "CV"
+title: "CV - Avratanu Biswas"
 permalink: /cv/
+excerpt: "Curriculum Vitae - Growth Engineer, PhD Biophysics, Analytics & Experimentation specialist"
+description: "CV of Avratanu Biswas: Growth Engineer at Riff with PhD in Biophysics. Experience in analytics, experimentation, growth engineering, and photosynthesis research."
 author_profile: true
 redirect_from:
   - /resume
@@ -31,7 +33,7 @@ Skills
 - Matlab
 - Python
 - Julia
-- UI development(*using Streamlit Python Framework, Matlab App-Designer*)
+- ReactJS
 
 Publications
 ======

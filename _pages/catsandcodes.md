@@ -1,7 +1,9 @@
 ---
 layout: archive
-title: "Cats & Codes"
+title: "Cats & Codes - Blog"
 permalink: /cats-and-codes/
+excerpt: "Blog posts on growth engineering, data science, analytics, Python, and technical insights from Avratanu Biswas."
+description: "Technical blog by Avratanu Biswas covering growth engineering, experimentation, analytics, Python programming, data science, and engineering insights."
 author_profile: false
 --- 
 <!-- Displaying categories -->
