@@ -7,10 +7,28 @@ author_profile: true
 marp: false
 ---
 
-My research focuses on monitoring excitation energy transfer and trapping kinetics during the light-harvesting process of cyanobacterial photosynthesis. We use various spectroscopic methods and data analysis tools to probe these rapid natural processes in photosynthetic organisms.
+## PhD in Biophysics (2018–2023)
 
-You can find the latest publications [here](https://scholar.google.com/citations?user=bTzfXH0AAAAJ&hl=en&authuser=1).
+**Thesis:** *Excitation Energy Transfer and Trapping in Cyanobacterial Photosynthesis*  
+**Graduated:** summa cum laude  
+**Institutions:** <a href="https://vu.nl" target="_blank">Vrije Universiteit Amsterdam</a> & <a href="https://www.szbk.u-szeged.hu/en/" target="_blank">Biological Research Centre, Szeged</a>
 
-<div style="text-align: center; margin-top: 20px;">
-  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQP3LTDbq3CT8Lj2sJcy7_8CMHmO4XipnY4VINiPpYlRh9Aghbt7mhKq9Cv3qFsnA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="640" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+Research focused on picosecond-scale excitation energy transfer in cyanobacteria (*Anabaena*, *Synechocystis*). As a Marie Curie Early-stage Researcher in the <a href="http://se2b.eu/" target="_blank">Se2B</a> Horizon 2020 program, used time-resolved fluorescence spectroscopy (TCSPC, streak camera) on isolated complexes and intact cells to track energy movement under varying conditions.
+
+Developed kinetic compartment models to simulate pigment-specific energy transfer (PBS → PSI/PSII) at room temperature and 77 K. Built custom modeling pipelines in MATLAB and Python with global fitting approaches.
+
+Studied PSII-deficient mutants to uncover direct PBS → PSI pathways, revealing alternative light-harvesting strategies.
+
+**Output:** 10+ peer-reviewed publications  
+**Thesis:** <a href="https://doktori.bibl.u-szeged.hu/id/eprint/12304/" target="_blank">Read here</a>  
+**Publications:** <a href="https://scholar.google.com/citations?user=bTzfXH0AAAAJ&hl=en" target="_blank">Google Scholar</a>
+
+**Technical skills:** Time-resolved spectroscopy, fluorescence kinetics, kinetic modeling, MATLAB, Python, TCSPC, streak camera, scientific computing
+
+---
+
+<div class="content" style="margin-top: 30px;">
+  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQP3LTDbq3CT8Lj2sJcy7_8CMHmO4XipnY4VINiPpYlRh9Aghbt7mhKq9Cv3qFsnA/embed?start=false&loop=false&delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;"></iframe>
+  </div>
 </div>

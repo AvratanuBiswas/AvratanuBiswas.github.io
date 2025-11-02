@@ -22,7 +22,43 @@
         <ul class="hidden-links hidden"></ul>
       </nav>
       {% if site.minimal_mistakes_skin2 %}
-        <span class="togglefa"><i class="fa fa-toggle-on" aria-hidden="true" onclick="node1=document.getElementById('theme_source');node2=document.getElementById('theme_source_2');if(node1.getAttribute('rel')=='stylesheet'){node1.setAttribute('rel', 'stylesheet alternate'); node2.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'dark');}else{node2.setAttribute('rel', 'stylesheet alternate'); node1.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'light');} return false;"></i></span>
+        <span class="togglefa" onclick="toggleTheme()">
+          <i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
+          <i class="fa fa-toggle-on" aria-hidden="true"></i>
+          <i class="fas fa-moon theme-icon-dark" aria-hidden="true"></i>
+        </span>
+        <script>
+          function toggleTheme() {
+            node1=document.getElementById('theme_source');
+            node2=document.getElementById('theme_source_2');
+            if(node1.getAttribute('rel')=='stylesheet'){
+              node1.setAttribute('rel', 'stylesheet alternate'); 
+              node2.setAttribute('rel', 'stylesheet');
+              sessionStorage.setItem('theme', 'dark');
+              document.querySelector('.theme-icon-light').style.opacity = '0.3';
+              document.querySelector('.theme-icon-dark').style.opacity = '1';
+            }else{
+              node2.setAttribute('rel', 'stylesheet alternate'); 
+              node1.setAttribute('rel', 'stylesheet');
+              sessionStorage.setItem('theme', 'light');
+              document.querySelector('.theme-icon-light').style.opacity = '1';
+              document.querySelector('.theme-icon-dark').style.opacity = '0.3';
+            } 
+            return false;
+          }
+          
+          // Set initial icon state based on current theme
+          window.addEventListener('DOMContentLoaded', function() {
+            let theme = sessionStorage.getItem('theme');
+            if(theme === 'dark') {
+              document.querySelector('.theme-icon-light').style.opacity = '0.3';
+              document.querySelector('.theme-icon-dark').style.opacity = '1';
+            } else {
+              document.querySelector('.theme-icon-light').style.opacity = '1';
+              document.querySelector('.theme-icon-dark').style.opacity = '0.3';
+            }
+          });
+        </script>
       {% endif %}
     </div>
   </div>
@@ -62,9 +98,19 @@
   }
   .togglefa {
     color: white;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     margin-left: auto;
     cursor: pointer;
+    font-size: 1.2em;
+  }
+  .togglefa .theme-icon-light,
+  .togglefa .theme-icon-dark {
+    transition: opacity 0.3s ease;
+  }
+  .togglefa .fa-toggle-on {
+    font-size: 1.1em;
   }
   .masthead__menu {
     display: flex;

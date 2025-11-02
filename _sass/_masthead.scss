@@ -15,8 +15,16 @@
   &__inner-wrap {
     @include container;
     @include clearfix;
-    padding: 1em 1em 1em;
+    padding: 0.75em 1em;
     font-family: $sans-serif-narrow;
+
+    @include breakpoint($medium) {
+      padding: 1em 1.5em;
+    }
+
+    @include breakpoint($large) {
+      padding: 1em 1em 1em;
+    }
 
     @include breakpoint($x-large) {
       max-width: $x-large;

@@ -1,0 +1,141 @@
+/* ==========================================================================
+   RESPONSIVE ENHANCEMENTS
+   ========================================================================== */
+
+/* Mobile-first improvements */
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Better text rendering on all devices */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  /* Better touch targets */
+  a, button, input, select, textarea {
+    min-height: 44px;
+  }
+  
+  .masthead__menu-item {
+    padding: 0.5em 0;
+  }
+  
+  /* Better spacing for mobile */
+  h1 {
+    font-size: $type-size-2;
+    margin: 1.5em 0 0.5em;
+  }
+  
+  h2 {
+    font-size: $type-size-3;
+    margin: 1.5em 0 0.5em;
+  }
+  
+  h3 {
+    font-size: $type-size-4;
+    margin: 1.25em 0 0.5em;
+  }
+  
+  /* Sidebar improvements for mobile */
+  .sidebar {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+  
+  /* Better content padding on mobile */
+  #main {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  
+  /* Optimize page content for mobile */
+  .page__content {
+    font-size: 1em;
+    
+    p {
+      margin-bottom: 1.2em;
+    }
+  }
+  
+  /* Responsive iframes */
+  iframe {
+    max-width: 100%;
+  }
+}
+
+/* Ensure consistent content width across all pages */
+.content, .page__content {
+  max-width: 100%;
+  
+  iframe {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .page__content {
+    font-size: 1.05em;
+  }
+}
+
+/* Better code blocks on mobile */
+pre, code {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Improve table responsiveness */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid $info-color;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .sidebar,
+  .masthead,
+  .page__footer,
+  .page__share {
+    display: none !important;
+  }
+  
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+}
+

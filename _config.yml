@@ -15,7 +15,7 @@ locale                   : "en-US"
 title                    : "Home"
 title_separator          : "-"
 name                     : &name "Avratanu Biswas"
-description              : &description "PhD Student in Biophysics at Biological Research Centre, Szeged, Hungary"
+description              : &description "Growth Engineer at Riff | PhD Biophysics"
 url                      : https://avratanubiswas.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "AvratanuBiswas/AvratanuBiswas.github.io"
@@ -86,14 +86,14 @@ analytics:
 # Site Author
 author:
   name             : "Avratanu Biswas"
-  avatar           : "profile.jpg"
-  bio              : "PhD Student, Biological Research Centre, Hungary"
-  location         : "Szeged, Hungary"
+  avatar           : "author_avatar/Avra-2 copy.jpg"
+  bio              : "Growth Engineer at Riff • PhD Biophysics"
+  location         : "Oslo, Norway"
   employer         :
-  pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           :
   googlescholar    : "https://scholar.google.com/citations?user=bTzfXH0AAAAJ&hl=en"
   email            : "avra42@gmail.com"
-  researchgate     : "https://www.researchgate.net/profile/Avratanu-Biswas"
+  researchgate     :
   uri              :
   bitbucket        :
   codepen          :
@@ -105,20 +105,20 @@ author:
   google_plus      :
   keybase          :
   instagram        :
-  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
+  impactstory      :
   lastfm           :
   linkedin         : "avratanu-biswas-708616b7"
-  orcid            : #"http://orcid.org/yourorcidurl"
+  orcid            :
   pinterest        :
   soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
+  stackoverflow    :
   steam            :
   tumblr           :
   twitter          : "Avra_b"
   vine             :
   weibo            :
   xing             :
-  youtube          : "avra_b"
+  youtube          :
   wikipedia        :
   
   
