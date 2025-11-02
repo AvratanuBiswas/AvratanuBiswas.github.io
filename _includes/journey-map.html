@@ -81,89 +81,89 @@
         {lat: 59.9139, lng: 10.7522, name: 'Oslo, Norway', desc: 'Growth Engineer @ Riff', year: '2023-Present', current: true}
       ];
 
-  // Add markers with clean circles and permanent labels
-  locations.forEach(function(loc, index) {
-    var markerBg = loc.current ? '#2563eb' : (isDarkMode ? '#1a1a1a' : '#fefcf5');
-    
-    // Marker with label
-    var markerIcon = L.divIcon({
-      html: '<div class="map-marker ' + (loc.current ? 'current' : '') + '" style="background: ' + markerBg + '"></div>' +
-            '<div class="map-label ' + (loc.current ? 'current' : '') + '">' +
-            '<strong>' + loc.name + '</strong>' +
-            (loc.year ? '<br><span class="label-year">' + loc.year + '</span>' : '') +
-            '</div>',
-      className: 'custom-marker-wrapper',
-      iconSize: [16, 16]
-    });
-    
-    var marker = L.marker([loc.lat, loc.lng], {icon: markerIcon}).addTo(map);
-    
-    // Optional popup with more details on hover
-    var popupBg = isDarkMode ? '#2a2a2a' : '#fefcf5';
-    var popupColor = isDarkMode ? '#eaeaea' : '#2d2d2d';
-    var popupContent = '<div style="text-align: center; font-family: Inter, sans-serif; min-width: 140px; color: ' + popupColor + ';">' +
-                       '<strong style="font-size: 1em; display: block; margin-bottom: 4px;">' + loc.name + '</strong>' + 
-                       (loc.year ? '<span style="font-size: 0.8em; opacity: 0.6; display: block; margin-bottom: 4px;">' + loc.year + '</span>' : '') +
-                       '<span style="font-size: 0.85em; opacity: 0.75;">' + loc.desc + '</span></div>';
-    marker.bindPopup(popupContent);
-    
-    // Draw curved connecting lines (arc effect)
-    if (index < locations.length - 1) {
-      var nextLoc = locations[index + 1];
-      
-      // Calculate curve control point (creates arc effect)
-      var midLat = (loc.lat + nextLoc.lat) / 2;
-      var midLng = (loc.lng + nextLoc.lng) / 2;
-      var distance = Math.sqrt(Math.pow(nextLoc.lat - loc.lat, 2) + Math.pow(nextLoc.lng - loc.lng, 2));
-      var offset = distance * 0.3; // Arc height
-      
-      // Create curved path with multiple points
-      var curvePoints = [];
-      for (var i = 0; i <= 30; i++) {
-        var t = i / 30;
-        var lat = loc.lat * (1-t) * (1-t) + midLat * 2 * (1-t) * t + nextLoc.lat * t * t;
-        var lng = loc.lng * (1-t) * (1-t) + midLng * 2 * (1-t) * t + nextLoc.lng * t * t;
+      // Add markers with clean circles and permanent labels
+      locations.forEach(function(loc, index) {
+        var markerBg = loc.current ? '#2563eb' : (isDarkMode ? '#1a1a1a' : '#fefcf5');
         
-        // Add vertical offset for 3D arc effect
-        if (i > 0 && i < 30) {
-          lat += offset * Math.sin(t * Math.PI);
+        // Marker with label
+        var markerIcon = L.divIcon({
+          html: '<div class="map-marker ' + (loc.current ? 'current' : '') + '" style="background: ' + markerBg + '"></div>' +
+                '<div class="map-label ' + (loc.current ? 'current' : '') + '">' +
+                '<strong>' + loc.name + '</strong>' +
+                (loc.year ? '<br><span class="label-year">' + loc.year + '</span>' : '') +
+                '</div>',
+          className: 'custom-marker-wrapper',
+          iconSize: [16, 16]
+        });
+        
+        var marker = L.marker([loc.lat, loc.lng], {icon: markerIcon}).addTo(map);
+        
+        // Optional popup with more details on hover
+        var popupBg = isDarkMode ? '#2a2a2a' : '#fefcf5';
+        var popupColor = isDarkMode ? '#eaeaea' : '#2d2d2d';
+        var popupContent = '<div style="text-align: center; font-family: Inter, sans-serif; min-width: 140px; color: ' + popupColor + ';">' +
+                           '<strong style="font-size: 1em; display: block; margin-bottom: 4px;">' + loc.name + '</strong>' + 
+                           (loc.year ? '<span style="font-size: 0.8em; opacity: 0.6; display: block; margin-bottom: 4px;">' + loc.year + '</span>' : '') +
+                           '<span style="font-size: 0.85em; opacity: 0.75;">' + loc.desc + '</span></div>';
+        marker.bindPopup(popupContent);
+        
+        // Draw curved connecting lines (arc effect)
+        if (index < locations.length - 1) {
+          var nextLoc = locations[index + 1];
+          
+          // Calculate curve control point (creates arc effect)
+          var midLat = (loc.lat + nextLoc.lat) / 2;
+          var midLng = (loc.lng + nextLoc.lng) / 2;
+          var distance = Math.sqrt(Math.pow(nextLoc.lat - loc.lat, 2) + Math.pow(nextLoc.lng - loc.lng, 2));
+          var offset = distance * 0.3; // Arc height
+          
+          // Create curved path with multiple points
+          var curvePoints = [];
+          for (var i = 0; i <= 30; i++) {
+            var t = i / 30;
+            var lat = loc.lat * (1-t) * (1-t) + midLat * 2 * (1-t) * t + nextLoc.lat * t * t;
+            var lng = loc.lng * (1-t) * (1-t) + midLng * 2 * (1-t) * t + nextLoc.lng * t * t;
+            
+            // Add vertical offset for 3D arc effect
+            if (i > 0 && i < 30) {
+              lat += offset * Math.sin(t * Math.PI);
+            }
+            
+            curvePoints.push([lat, lng]);
+          }
+          
+          // Gradient effect - thicker at start, thinner at end
+          var polyline = L.polyline(curvePoints, {
+            color: '#3b82f6',
+            weight: 3,
+            opacity: isDarkMode ? 0.45 : 0.6,
+            smoothFactor: 1,
+            lineCap: 'round',
+            lineJoin: 'round'
+          }).addTo(map);
+          
+          // Add subtle shadow line for 3D depth
+          var shadowLine = L.polyline(curvePoints, {
+            color: '#1e40af',
+            weight: 5,
+            opacity: isDarkMode ? 0.15 : 0.2,
+            smoothFactor: 1,
+            lineCap: 'round'
+          }).addTo(map);
+          shadowLine.bringToBack();
         }
-        
-        curvePoints.push([lat, lng]);
-      }
-      
-      // Gradient effect - thicker at start, thinner at end
-      var polyline = L.polyline(curvePoints, {
-        color: '#3b82f6',
-        weight: 3,
-        opacity: isDarkMode ? 0.45 : 0.6,
-        smoothFactor: 1,
-        lineCap: 'round',
-        lineJoin: 'round'
-      }).addTo(map);
-      
-      // Add subtle shadow line for 3D depth
-      var shadowLine = L.polyline(curvePoints, {
-        color: '#1e40af',
-        weight: 5,
-        opacity: isDarkMode ? 0.15 : 0.2,
-        smoothFactor: 1,
-        lineCap: 'round'
-      }).addTo(map);
-      shadowLine.bringToBack();
-    }
-  });
+      });
 
-  // Perfect view showing all your journey
-  setTimeout(function() {
-    var bounds = L.latLngBounds(locations.map(loc => [loc.lat, loc.lng]));
-    map.fitBounds(bounds, {
-      padding: [100, 100],
-      maxZoom: 4.5,
-      animate: true,
-      duration: 0.8
-    });
-  }, 100);
+      // Perfect view showing all your journey
+      setTimeout(function() {
+        var bounds = L.latLngBounds(locations.map(loc => [loc.lat, loc.lng]));
+        map.fitBounds(bounds, {
+          padding: [100, 100],
+          maxZoom: 4.5,
+          animate: true,
+          duration: 0.8
+        });
+      }, 100);
     
     } catch(error) {
       console.error('Map initialization error:', error);
