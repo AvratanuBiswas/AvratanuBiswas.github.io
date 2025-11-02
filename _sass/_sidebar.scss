@@ -250,37 +250,11 @@
   }
 
   &:before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: -11px;
-    left: calc(50% - 10px);
-    width: 0;
-    border-style: solid;
-    border-width: 0 10px 10px;
-    border-color: $border-color transparent;
-    z-index: 0;
-
-    @include breakpoint($large) {
-      display: none;
-    }
+    display: none;
   }
 
   &:after {
-    display: block;
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: calc(50% - 10px);
-    width: 0;
-    border-style: solid;
-    border-width: 0 10px 10px;
-    border-color: #fff transparent;
-    z-index: 1;
-
-    @include breakpoint($large) {
-      display: none;
-    }
+    display: none;
   }
 
   li {
@@ -292,18 +266,17 @@
   }
 
   a {
-    display: block;
+    display: flex;
+    align-items: center;
     margin-bottom: 6px;
     padding: 10px 12px;
     color: $text-color;
     font-size: 0.8em;
     text-decoration: none;
     border-radius: 6px;
-    transition: all 0.2s ease;
+    transition: opacity 0.2s ease;
     opacity: 0.85;
     min-height: 44px;
-    display: flex;
-    align-items: center;
 
     @include breakpoint($medium) {
       padding: 8px 10px;

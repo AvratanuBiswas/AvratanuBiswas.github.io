@@ -1,43 +1,34 @@
 /* ==========================================================================
-   MOBILE-SPECIFIC SIDEBAR STYLES
+   MOBILE-SPECIFIC SIDEBAR STYLES - MINIMAL
    ========================================================================== */
 
-/* Compact mobile author profile */
 @media (max-width: 768px) {
-  .author__avatar,
-  .author__content {
-    display: inline-block;
-    vertical-align: middle;
-  }
-  
-  .author__avatar {
-    margin-right: 0.75em;
-    margin-bottom: 0;
-  }
-  
-  .author__content {
-    text-align: left;
-    max-width: calc(100% - 90px);
-  }
-  
+  /* Centered sidebar - minimal profile only */
   .sidebar {
-    padding: 0.5em 0 !important;
+    text-align: center !important;
+    padding: 1em 0 !important;
     margin-bottom: 1em !important;
   }
   
-  /* Make the profile section a compact horizontal card */
+  .author__avatar {
+    justify-content: center !important;
+    margin-bottom: 0.75em !important;
+  }
+  
+  .author__content {
+    text-align: center !important;
+  }
+  
   .sidebar .author__name {
-    margin-bottom: 0.2em;
-    line-height: 1.3;
+    margin-bottom: 0.3em !important;
   }
   
   .sidebar .author__bio {
-    margin-bottom: 0;
-    line-height: 1.4;
+    margin-bottom: 0 !important;
   }
   
-  /* HIDE all social links on mobile for minimal sidebar */
-  .author__urls-wrapper {
+  /* HIDE social links in sidebar on mobile */
+  .sidebar .author__urls-wrapper {
     display: none !important;
   }
 }

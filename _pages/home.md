@@ -1,7 +1,6 @@
 ---
 layout: archive
 permalink: /
-title: "Avratanu Biswas - Growth Engineer & Biophysicist"
 excerpt: "Growth Engineer at Riff building analytics and experimentation systems. PhD in Biophysics from VU Amsterdam. Based in Oslo, Norway."
 description: "Avratanu Biswas is a Growth Engineer at Riff (formerly Databutton) specializing in experimentation, analytics pipelines, and growth systems. PhD in Biophysics studying photosynthesis and energy transfer."
 author_profile: true

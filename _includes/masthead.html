@@ -57,6 +57,16 @@
               document.querySelector('.theme-icon-light').style.opacity = '1';
               document.querySelector('.theme-icon-dark').style.opacity = '0.3';
             }
+            
+            // Highlight active navigation item
+            var currentPath = window.location.pathname;
+            var navLinks = document.querySelectorAll('.masthead__menu-item a');
+            navLinks.forEach(function(link) {
+              var linkPath = link.getAttribute('href');
+              if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) {
+                link.style.opacity = '1';
+              }
+            });
           });
         </script>
       {% endif %}
@@ -85,16 +95,33 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    gap: 0.75em;
   }
   .visible-links li {
-    margin-right: 20px;
+    margin-right: 0;
   }
   .masthead__menu-item a {
     color: white;
     text-decoration: none;
+    font-size: 1em;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+    padding: 0.5em 0;
+    font-weight: 500;
+  }
+  .masthead__menu-item a:hover {
+    opacity: 1;
   }
   .masthead__menu-item--lg a {
-    font-size: 1.25em;
+    font-size: 1em;
+    font-weight: 600;
+    opacity: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .visible-links {
+      gap: 1em;
+    }
   }
   .togglefa {
     color: white;
