@@ -31,19 +31,28 @@
           function toggleTheme() {
             node1=document.getElementById('theme_source');
             node2=document.getElementById('theme_source_2');
+            var newTheme;
             if(node1.getAttribute('rel')=='stylesheet'){
               node1.setAttribute('rel', 'stylesheet alternate'); 
               node2.setAttribute('rel', 'stylesheet');
               sessionStorage.setItem('theme', 'dark');
+              newTheme = 'dark';
               document.querySelector('.theme-icon-light').style.opacity = '0.3';
               document.querySelector('.theme-icon-dark').style.opacity = '1';
             }else{
               node2.setAttribute('rel', 'stylesheet alternate'); 
               node1.setAttribute('rel', 'stylesheet');
               sessionStorage.setItem('theme', 'light');
+              newTheme = 'light';
               document.querySelector('.theme-icon-light').style.opacity = '1';
               document.querySelector('.theme-icon-dark').style.opacity = '0.3';
-            } 
+            }
+            
+            // Update map theme if map exists
+            if (typeof window.updateMapTheme === 'function') {
+              window.updateMapTheme(newTheme);
+            }
+            
             return false;
           }
           
@@ -108,9 +117,13 @@
     transition: opacity 0.2s ease;
     padding: 0.5em 0;
     font-weight: 500;
+    outline: none;
   }
   .masthead__menu-item a:hover {
     opacity: 1;
+  }
+  .masthead__menu-item a:focus {
+    outline: none;
   }
   .masthead__menu-item--lg a {
     font-size: 1em;

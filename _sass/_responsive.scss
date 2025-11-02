@@ -109,14 +109,18 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Focus styles for accessibility */
-a:focus,
-button:focus,
+/* Focus styles for accessibility - subtle */
 input:focus,
 textarea:focus,
 select:focus {
   outline: 2px solid $info-color;
   outline-offset: 2px;
+}
+
+/* Remove focus outline from navigation links */
+.masthead a:focus,
+.masthead button:focus {
+  outline: none;
 }
 
 /* Print styles */

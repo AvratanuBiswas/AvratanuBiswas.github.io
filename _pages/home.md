@@ -11,35 +11,27 @@ marp: false
   <h1>Hi, I'm Avra.</h1>
 
   <p>
-    I'm a Growth Engineer at <a href="https://riff.ai" target="_blank">Riff</a> (formerly Databutton) 
-    with a PhD in Biophysics. I build and ship systems that connect product, growth, and data.
-  </p>
-
-  <h2>Now</h2>
-  <p>
-    I build and run the growth stack at Riff—shipping experiments, analytics pipelines, 
-    CMS integrations, event tracking infrastructure, and tooling that powers data-driven 
-    product and marketing decisions. Fast iterations, measurable outcomes.
-  </p>
-
-  <h2>Before</h2>
-  <p>
-    Joined Databutton in 2023 as an early team member. 
-    Worked across the stack—from developer tooling and technical support to growth engineering. 
-    Helped scale the platform during rapid growth from a 7-person startup.
+    I'm Growth Engineer at <a href="https://riff.ai" target="_blank">Riff</a> (formerly Databutton), 
+    building and running the growth stack with a focus on fast iterations and measurable outcomes.
   </p>
 
   <p>
-    Before Riff, I spent five years doing research in biophysics—studying photosynthesis and 
-    energy transfer in cyanobacteria. Earned my PhD (summa cum laude) from 
+    Joined Databutton in 2023 as an early team member when it was a 7-person startup in the middle of rapid growth. 
+    Worked across the stack, from dev relations and technical support to growth engineering, 
+    helping scale the platform and onboard the first wave of builders.
+  </p>
+
+  <p>
+    I come from academia with a PhD in Biophysics from 
     <a href="https://vu.nl" target="_blank">Vrije Universiteit Amsterdam</a> and 
-    <a href="https://www.szbk.u-szeged.hu/en/" target="_blank">Biological Research Centre, Szeged</a>. 
-    Built kinetic models in MATLAB and Python, ran time-resolved spectroscopy experiments, 
-    published 10+ peer-reviewed papers. 
+    <a href="https://www.szbk.u-szeged.hu/en/" target="_blank">Biological Research Centre, Szeged</a>, 
+    where I researched photosynthesis and energy transfer in cyanobacteria using time-resolved spectroscopy and kinetic modeling. 
+    Published 10+ peer-reviewed papers. 
     <a href="https://doktori.bibl.u-szeged.hu/id/eprint/12304/" target="_blank">Read my thesis</a>.
   </p>
 
 </div>
 
+{% include journey-map.html %}
 
 <script data-goatcounter="https://avrab.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

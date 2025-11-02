@@ -27,16 +27,14 @@ $(document).ready(function(){
   $(".sticky").Stickyfill();
 
   var stickySideBar = function(){
-    // Always show author URLs on all screen sizes
-    $(".author__urls").show();
-    
-    var show = $(window).width() > 1024;
-    if (show) {
-      // fix
+    // Show author URLs only on desktop (>924px)
+    if ($(window).width() > 924) {
+      $(".sidebar .author__urls").show();
       Stickyfill.rebuild();
       Stickyfill.init();
     } else {
-      // unfix
+      $(".sidebar .author__urls").hide();
+      $(".sidebar .author__urls-wrapper").hide();
       Stickyfill.stop();
     }
   };

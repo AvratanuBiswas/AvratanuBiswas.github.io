@@ -104,19 +104,23 @@
   }
 
   img {
-    width: 70px;
-    height: 70px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
     display: block;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 
+    @media (min-width: 480px) {
+      width: 140px;
+      height: 140px;
+    }
+
     @include breakpoint($medium) {
-      width: 130px;
-      height: 130px;
-      border: 3px solid rgba(255, 255, 255, 0.1);
+      width: 160px;
+      height: 160px;
     }
 
     @include breakpoint($large) {

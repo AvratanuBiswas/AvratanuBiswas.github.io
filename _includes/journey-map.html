@@ -1,0 +1,329 @@
+<!-- Journey Map with Leaflet -->
+<div class="journey-map-container">
+  <div id="journey-map" style="height: 500px; width: 100%; border-radius: 8px; overflow: hidden;"></div>
+</div>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+  // Initialize map
+  var map = L.map('journey-map', {
+    zoomControl: true,
+    scrollWheelZoom: false,
+    dragging: true,
+    touchZoom: true,
+    doubleClickZoom: false,
+    minZoom: 2,
+    maxZoom: 7,
+    maxBounds: [[-90, -180], [90, 180]]
+  }).setView([48, 30], 4);
+
+  // Check if dark mode is active
+  var isDarkMode = sessionStorage.getItem('theme') === 'dark';
+  
+  // Choose tile layer based on theme
+  var tileUrl = isDarkMode 
+    ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+    : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+  
+  var tileLayer = L.tileLayer(tileUrl, {
+    attribution: '',
+    maxZoom: 19
+  }).addTo(map);
+  
+  // Function to update map theme dynamically
+  window.updateMapTheme = function(theme) {
+    // Update tile layer
+    var newTileUrl = theme === 'dark'
+      ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+      : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+    
+    map.removeLayer(tileLayer);
+    tileLayer = L.tileLayer(newTileUrl, {
+      attribution: '',
+      maxZoom: 19
+    }).addTo(map);
+    
+    // Update label colors based on theme
+    var isDark = theme === 'dark';
+    var labels = document.querySelectorAll('.map-label:not(.current)');
+    labels.forEach(function(label) {
+      label.style.background = isDark ? 'rgba(42, 42, 42, 0.95)' : 'rgba(254, 252, 245, 0.95)';
+      label.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.08)';
+    });
+    
+    var labelTexts = document.querySelectorAll('.map-label:not(.current) strong, .map-label:not(.current) .label-year');
+    labelTexts.forEach(function(text) {
+      text.style.color = isDark ? '#eaeaea' : '#2d2d2d';
+    });
+  };
+
+  // Journey locations
+  var locations = [
+    {lat: 22.5726, lng: 88.3639, name: 'Kolkata, India', desc: 'Origins', year: ''},
+    {lat: 46.2530, lng: 20.1414, name: 'Szeged, Hungary', desc: 'Research Training', year: '2017-2018'},
+    {lat: 52.3676, lng: 4.9041, name: 'Amsterdam, Netherlands', desc: 'PhD @ VU Amsterdam', year: '2018-2023'},
+    {lat: 46.2530, lng: 20.1414, name: 'Szeged, Hungary', desc: 'Research @ BRC', year: '2020-2023'},
+    {lat: 59.9139, lng: 10.7522, name: 'Oslo, Norway', desc: 'Growth Engineer @ Riff', year: '2023-Present', current: true}
+  ];
+
+  // Add markers with clean circles and permanent labels
+  locations.forEach(function(loc, index) {
+    var markerBg = loc.current ? '#2563eb' : (isDarkMode ? '#1a1a1a' : '#fefcf5');
+    
+    // Marker with label
+    var markerIcon = L.divIcon({
+      html: '<div class="map-marker ' + (loc.current ? 'current' : '') + '" style="background: ' + markerBg + '"></div>' +
+            '<div class="map-label ' + (loc.current ? 'current' : '') + '">' +
+            '<strong>' + loc.name + '</strong>' +
+            (loc.year ? '<br><span class="label-year">' + loc.year + '</span>' : '') +
+            '</div>',
+      className: 'custom-marker-wrapper',
+      iconSize: [16, 16]
+    });
+    
+    var marker = L.marker([loc.lat, loc.lng], {icon: markerIcon}).addTo(map);
+    
+    // Optional popup with more details on hover
+    var popupBg = isDarkMode ? '#2a2a2a' : '#fefcf5';
+    var popupColor = isDarkMode ? '#eaeaea' : '#2d2d2d';
+    var popupContent = '<div style="text-align: center; font-family: Inter, sans-serif; min-width: 140px; color: ' + popupColor + ';">' +
+                       '<strong style="font-size: 1em; display: block; margin-bottom: 4px;">' + loc.name + '</strong>' + 
+                       (loc.year ? '<span style="font-size: 0.8em; opacity: 0.6; display: block; margin-bottom: 4px;">' + loc.year + '</span>' : '') +
+                       '<span style="font-size: 0.85em; opacity: 0.75;">' + loc.desc + '</span></div>';
+    marker.bindPopup(popupContent);
+    
+    // Draw curved connecting lines (arc effect)
+    if (index < locations.length - 1) {
+      var nextLoc = locations[index + 1];
+      
+      // Calculate curve control point (creates arc effect)
+      var midLat = (loc.lat + nextLoc.lat) / 2;
+      var midLng = (loc.lng + nextLoc.lng) / 2;
+      var distance = Math.sqrt(Math.pow(nextLoc.lat - loc.lat, 2) + Math.pow(nextLoc.lng - loc.lng, 2));
+      var offset = distance * 0.3; // Arc height
+      
+      // Create curved path with multiple points
+      var curvePoints = [];
+      for (var i = 0; i <= 30; i++) {
+        var t = i / 30;
+        var lat = loc.lat * (1-t) * (1-t) + midLat * 2 * (1-t) * t + nextLoc.lat * t * t;
+        var lng = loc.lng * (1-t) * (1-t) + midLng * 2 * (1-t) * t + nextLoc.lng * t * t;
+        
+        // Add vertical offset for 3D arc effect
+        if (i > 0 && i < 30) {
+          lat += offset * Math.sin(t * Math.PI);
+        }
+        
+        curvePoints.push([lat, lng]);
+      }
+      
+      // Gradient effect - thicker at start, thinner at end
+      var polyline = L.polyline(curvePoints, {
+        color: '#3b82f6',
+        weight: 3,
+        opacity: isDarkMode ? 0.45 : 0.6,
+        smoothFactor: 1,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map);
+      
+      // Add subtle shadow line for 3D depth
+      var shadowLine = L.polyline(curvePoints, {
+        color: '#1e40af',
+        weight: 5,
+        opacity: isDarkMode ? 0.15 : 0.2,
+        smoothFactor: 1,
+        lineCap: 'round'
+      }).addTo(map);
+      shadowLine.bringToBack();
+    }
+  });
+
+  // Fit bounds to show all markers with optimal padding
+  var bounds = L.latLngBounds(locations.map(loc => [loc.lat, loc.lng]));
+  map.fitBounds(bounds, {
+    padding: [80, 80],
+    maxZoom: 5,
+    animate: true,
+    duration: 1
+  });
+</script>
+
+<style>
+.journey-map-container {
+  margin: 4em 0 10em;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+#journey-map {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure footer is above map */
+.page__footer {
+  z-index: 100 !important;
+}
+
+.custom-marker-wrapper {
+  background: transparent !important;
+  border: none !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.map-marker {
+  width: 14px;
+  height: 14px;
+  background: #fefcf5;
+  border: 3px solid #2563eb;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.map-marker.current {
+  width: 18px;
+  height: 18px;
+  background: #2563eb;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.2), 0 4px 12px rgba(37, 99, 235, 0.4);
+  animation: pulse-marker 2.5s infinite;
+}
+
+.map-label {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(254, 252, 245, 0.95);
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-family: Inter, sans-serif;
+  font-size: 0.75em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.map-label strong {
+  color: #2d2d2d;
+  font-weight: 600;
+  font-size: 0.95em;
+}
+
+.map-label .label-year {
+  font-size: 0.85em;
+  opacity: 0.6;
+  color: #2d2d2d;
+}
+
+.map-label.current {
+  background: rgba(37, 99, 235, 0.95);
+  border-color: #2563eb;
+  box-shadow: 0 3px 12px rgba(37, 99, 235, 0.3);
+}
+
+.map-label.current strong,
+.map-label.current .label-year {
+  color: white;
+}
+
+@keyframes pulse-marker {
+  0%, 100% {
+    box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.2), 0 4px 12px rgba(37, 99, 235, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(37, 99, 235, 0.15), 0 4px 12px rgba(37, 99, 235, 0.4);
+  }
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  background: #fefcf5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.leaflet-popup-content {
+  margin: 14px;
+  font-size: 0.9em;
+  color: #2d2d2d;
+}
+
+.leaflet-popup-tip {
+  background: #fefcf5;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .leaflet-popup-content-wrapper {
+    background: #2a2a2a;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .leaflet-popup-tip {
+    background: #2a2a2a;
+  }
+  
+  .leaflet-popup-content {
+    color: #eaeaea;
+  }
+  
+  .map-marker {
+    background: #212121;
+  }
+  
+  .map-label {
+    background: rgba(42, 42, 42, 0.95);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .map-label strong,
+  .map-label .label-year {
+    color: #eaeaea;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .journey-map-container {
+    margin: 2.5em 0 8em;
+  }
+  
+  #journey-map {
+    height: 400px !important;
+  }
+  
+  .map-label {
+    font-size: 0.65em;
+    padding: 4px 8px;
+    top: 20px;
+  }
+  
+  .map-label strong {
+    font-size: 0.9em;
+  }
+  
+  /* Ensure sidebar social links are completely hidden */
+  .sidebar .author__urls-wrapper,
+  .sidebar .author__urls {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+</style>
+

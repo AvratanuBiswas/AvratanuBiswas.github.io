@@ -1,8 +1,8 @@
 /* ==========================================================================
-   MOBILE-SPECIFIC SIDEBAR STYLES - MINIMAL
+   MOBILE & TABLET SIDEBAR STYLES - MINIMAL
    ========================================================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 924px) {
   /* Centered sidebar - minimal profile only */
   .sidebar {
     text-align: center !important;
@@ -12,7 +12,7 @@
   
   .author__avatar {
     justify-content: center !important;
-    margin-bottom: 0.75em !important;
+    margin-bottom: 1em !important;
   }
   
   .author__content {
@@ -20,16 +20,23 @@
   }
   
   .sidebar .author__name {
-    margin-bottom: 0.3em !important;
+    margin-bottom: 0.4em !important;
   }
   
   .sidebar .author__bio {
     margin-bottom: 0 !important;
   }
   
-  /* HIDE social links in sidebar on mobile */
-  .sidebar .author__urls-wrapper {
+  /* FORCE HIDE all social links in sidebar on mobile & tablet */
+  .sidebar .author__urls-wrapper,
+  .sidebar .author__urls,
+  .author__urls-wrapper,
+  .author__urls {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
   }
 }
 
