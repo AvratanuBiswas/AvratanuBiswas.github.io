@@ -4,16 +4,24 @@
 </div>
 
 <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
 
 <!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 
 <script>
-// Wait for Leaflet to load
-if (typeof L !== 'undefined') {
-  // Initialize map
-  var map = L.map('journey-map', {
+(function() {
+  // Wait for everything to load
+  function initMap() {
+    if (typeof L === 'undefined') {
+      console.log('Leaflet not loaded yet, retrying...');
+      setTimeout(initMap, 100);
+      return;
+    }
+    
+    try {
+      // Initialize map
+      var map = L.map('journey-map', {
     zoomControl: true,
     scrollWheelZoom: false,
     dragging: true,
@@ -156,10 +164,20 @@ if (typeof L !== 'undefined') {
       duration: 0.8
     });
   }, 100);
-} else {
-  console.log('Leaflet library not loaded');
-  document.getElementById('journey-map').innerHTML = '<div style="text-align: center; padding: 2em; color: rgba(255,255,255,0.5);">Map loading...</div>';
-}
+    
+    } catch(error) {
+      console.error('Map initialization error:', error);
+      document.getElementById('journey-map').innerHTML = '<div style="text-align: center; padding: 2em; opacity: 0.5;">Map could not load</div>';
+    }
+  }
+  
+  // Start initialization
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMap);
+  } else {
+    initMap();
+  }
+})();
 </script>
 
 <style>
