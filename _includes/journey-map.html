@@ -144,14 +144,16 @@
     }
   });
 
-  // Fit bounds to show all markers with optimal padding
-  var bounds = L.latLngBounds(locations.map(loc => [loc.lat, loc.lng]));
-  map.fitBounds(bounds, {
-    padding: [80, 80],
-    maxZoom: 5,
-    animate: true,
-    duration: 1
-  });
+  // Perfect view showing all your journey
+  setTimeout(function() {
+    var bounds = L.latLngBounds(locations.map(loc => [loc.lat, loc.lng]));
+    map.fitBounds(bounds, {
+      padding: [100, 100],
+      maxZoom: 4.5,
+      animate: true,
+      duration: 0.8
+    });
+  }, 100);
 </script>
 
 <style>
