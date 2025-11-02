@@ -22,64 +22,64 @@
     try {
       // Initialize map
       var map = L.map('journey-map', {
-    zoomControl: true,
-    scrollWheelZoom: false,
-    dragging: true,
-    touchZoom: true,
-    doubleClickZoom: false,
-    minZoom: 2,
-    maxZoom: 7,
-    maxBounds: [[-90, -180], [90, 180]]
-  }).setView([48, 30], 4);
+        zoomControl: true,
+        scrollWheelZoom: false,
+        dragging: true,
+        touchZoom: true,
+        doubleClickZoom: false,
+        minZoom: 2,
+        maxZoom: 7,
+        maxBounds: [[-90, -180], [90, 180]]
+      }).setView([48, 30], 4);
 
-  // Check if dark mode is active
-  var isDarkMode = sessionStorage.getItem('theme') === 'dark';
-  
-  // Choose tile layer based on theme
-  var tileUrl = isDarkMode 
-    ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-    : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
-  
-  var tileLayer = L.tileLayer(tileUrl, {
-    attribution: '',
-    maxZoom: 19
-  }).addTo(map);
-  
-  // Function to update map theme dynamically
-  window.updateMapTheme = function(theme) {
-    // Update tile layer
-    var newTileUrl = theme === 'dark'
-      ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-      : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
-    
-    map.removeLayer(tileLayer);
-    tileLayer = L.tileLayer(newTileUrl, {
-      attribution: '',
-      maxZoom: 19
-    }).addTo(map);
-    
-    // Update label colors based on theme
-    var isDark = theme === 'dark';
-    var labels = document.querySelectorAll('.map-label:not(.current)');
-    labels.forEach(function(label) {
-      label.style.background = isDark ? 'rgba(42, 42, 42, 0.95)' : 'rgba(254, 252, 245, 0.95)';
-      label.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.08)';
-    });
-    
-    var labelTexts = document.querySelectorAll('.map-label:not(.current) strong, .map-label:not(.current) .label-year');
-    labelTexts.forEach(function(text) {
-      text.style.color = isDark ? '#eaeaea' : '#2d2d2d';
-    });
-  };
+      // Check if dark mode is active
+      var isDarkMode = sessionStorage.getItem('theme') === 'dark';
+      
+      // Choose tile layer based on theme
+      var tileUrl = isDarkMode 
+        ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+        : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+      
+      var tileLayer = L.tileLayer(tileUrl, {
+        attribution: '',
+        maxZoom: 19
+      }).addTo(map);
+      
+      // Function to update map theme dynamically
+      window.updateMapTheme = function(theme) {
+        // Update tile layer
+        var newTileUrl = theme === 'dark'
+          ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+          : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+        
+        map.removeLayer(tileLayer);
+        tileLayer = L.tileLayer(newTileUrl, {
+          attribution: '',
+          maxZoom: 19
+        }).addTo(map);
+        
+        // Update label colors based on theme
+        var isDark = theme === 'dark';
+        var labels = document.querySelectorAll('.map-label:not(.current)');
+        labels.forEach(function(label) {
+          label.style.background = isDark ? 'rgba(42, 42, 42, 0.95)' : 'rgba(254, 252, 245, 0.95)';
+          label.style.borderColor = isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.08)';
+        });
+        
+        var labelTexts = document.querySelectorAll('.map-label:not(.current) strong, .map-label:not(.current) .label-year');
+        labelTexts.forEach(function(text) {
+          text.style.color = isDark ? '#eaeaea' : '#2d2d2d';
+        });
+      };
 
-  // Journey locations
-  var locations = [
-    {lat: 22.5726, lng: 88.3639, name: 'Kolkata, India', desc: 'Origins', year: ''},
-    {lat: 46.2530, lng: 20.1414, name: 'Szeged, Hungary', desc: 'Research Training', year: '2017-2018'},
-    {lat: 52.3676, lng: 4.9041, name: 'Amsterdam, Netherlands', desc: 'PhD @ VU Amsterdam', year: '2018-2023'},
-    {lat: 46.2530, lng: 20.1414, name: 'Szeged, Hungary', desc: 'Research @ BRC', year: '2020-2023'},
-    {lat: 59.9139, lng: 10.7522, name: 'Oslo, Norway', desc: 'Growth Engineer @ Riff', year: '2023-Present', current: true}
-  ];
+      // Journey locations
+      var locations = [
+        {lat: 22.5726, lng: 88.3639, name: 'Kolkata, India', desc: 'Origins', year: ''},
+        {lat: 46.2530, lng: 20.1414, name: 'Szeged, Hungary', desc: 'Research Training', year: '2017-2018'},
+        {lat: 52.3676, lng: 4.9041, name: 'Amsterdam, Netherlands', desc: 'PhD @ VU Amsterdam', year: '2018-2023'},
+        {lat: 46.2530, lng: 20.1414, name: 'Szeged, Hungary', desc: 'Research @ BRC', year: '2020-2023'},
+        {lat: 59.9139, lng: 10.7522, name: 'Oslo, Norway', desc: 'Growth Engineer @ Riff', year: '2023-Present', current: true}
+      ];
 
   // Add markers with clean circles and permanent labels
   locations.forEach(function(loc, index) {
