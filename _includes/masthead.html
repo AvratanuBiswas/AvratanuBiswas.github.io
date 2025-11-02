@@ -22,11 +22,75 @@
         <ul class="hidden-links hidden"></ul>
       </nav>
       {% if site.minimal_mistakes_skin2 %}
-        <span class="togglefa" onclick="toggleTheme()">
+        <span class="togglefa" id="theme-toggle-btn">
           <i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
           <i class="fa fa-toggle-on" aria-hidden="true"></i>
           <i class="fas fa-moon theme-icon-dark" aria-hidden="true"></i>
         </span>
+        <script>
+          (function() {
+            document.addEventListener('DOMContentLoaded', function() {
+              var toggleBtn = document.getElementById('theme-toggle-btn');
+              if (toggleBtn) {
+                toggleBtn.addEventListener('click', function() {
+                  var node1 = document.getElementById('theme_source');
+                  var node2 = document.getElementById('theme_source_2');
+                  var newTheme;
+                  
+                  if(node1.getAttribute('rel')=='stylesheet'){
+                    node1.setAttribute('rel', 'stylesheet alternate'); 
+                    node2.setAttribute('rel', 'stylesheet');
+                    sessionStorage.setItem('theme', 'dark');
+                    newTheme = 'dark';
+                    
+                    var lightIcon = document.querySelector('.theme-icon-light');
+                    var darkIcon = document.querySelector('.theme-icon-dark');
+                    if (lightIcon) lightIcon.style.opacity = '0.3';
+                    if (darkIcon) darkIcon.style.opacity = '1';
+                  } else {
+                    node2.setAttribute('rel', 'stylesheet alternate'); 
+                    node1.setAttribute('rel', 'stylesheet');
+                    sessionStorage.setItem('theme', 'light');
+                    newTheme = 'light';
+                    
+                    var lightIcon = document.querySelector('.theme-icon-light');
+                    var darkIcon = document.querySelector('.theme-icon-dark');
+                    if (lightIcon) lightIcon.style.opacity = '1';
+                    if (darkIcon) darkIcon.style.opacity = '0.3';
+                  }
+                  
+                  // Update map theme if map exists
+                  if (typeof window.updateMapTheme === 'function') {
+                    window.updateMapTheme(newTheme);
+                  }
+                });
+              }
+              
+              // Set initial icon state
+              var theme = sessionStorage.getItem('theme');
+              var lightIcon = document.querySelector('.theme-icon-light');
+              var darkIcon = document.querySelector('.theme-icon-dark');
+              
+              if(theme === 'dark') {
+                if (lightIcon) lightIcon.style.opacity = '0.3';
+                if (darkIcon) darkIcon.style.opacity = '1';
+              } else {
+                if (lightIcon) lightIcon.style.opacity = '1';
+                if (darkIcon) darkIcon.style.opacity = '0.3';
+              }
+              
+              // Highlight active navigation item
+              var currentPath = window.location.pathname;
+              var navLinks = document.querySelectorAll('.masthead__menu-item a');
+              navLinks.forEach(function(link) {
+                var linkPath = link.getAttribute('href');
+                if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) {
+                  link.style.opacity = '1';
+                }
+              });
+            });
+          })();
+        </script>
       {% endif %}
     </div>
   </div>
