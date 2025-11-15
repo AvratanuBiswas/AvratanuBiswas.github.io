@@ -21,12 +21,12 @@ marp: false
 
   <p>
     Research focused on picosecond-scale excitation energy transfer in cyanobacteria (<em>Anabaena</em>, <em>Synechocystis</em>). 
-    As a <strong>Marie Curie Early-stage Researcher</strong> in the <a href="http://se2b.eu/" target="_blank">Se2B</a> Horizon 2020 program, used time-resolved fluorescence spectroscopy (TCSPC, streak camera) on isolated complexes and intact cells to track energy movement under varying conditions.
+    As a <strong>Marie Curie Early-stage Researcher</strong> in the <a href="http://se2b.eu/" target="_blank">Se2B</a> Horizon 2020 program, used <strong>time-resolved fluorescence spectroscopy</strong> (TCSPC, streak camera) on isolated complexes and intact cells to track energy movement under varying conditions.
   </p>
 
   <p>
     Developed <strong>kinetic compartment models</strong> to simulate pigment-specific energy transfer (PBS → PSI/PSII) at room temperature and 77 K. 
-    Built custom modeling pipelines in <strong>MATLAB and Python</strong> with global fitting approaches.
+    Built custom modeling pipelines in MATLAB and Python with <strong>complex global fitting approaches</strong>.
   </p>
 
   <p>

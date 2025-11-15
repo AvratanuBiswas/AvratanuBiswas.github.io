@@ -8,23 +8,44 @@
 </div>
 
 <!-- Leaflet CSS - Local -->
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/leaflet/leaflet.css" />
+<link rel="stylesheet" href="/assets/leaflet/leaflet.css" />
 
 <!-- Leaflet JS - Local -->
-<script src="{{ site.baseurl }}/assets/leaflet/leaflet.js"></script>
+<script src="/assets/leaflet/leaflet.js"></script>
 
 {% raw %}
 <script>
 (function() {
+  console.log('[Map Debug] Script started');
+  
+  var retryCount = 0;
+  var maxRetries = 50;
+  
   // Wait for everything to load
   function initMap() {
+    retryCount++;
+    
     if (typeof L === 'undefined') {
-      console.log('Leaflet not loaded yet, retrying...');
+      console.log('[Map Debug] Leaflet not loaded yet, retry ' + retryCount + '/' + maxRetries);
+      
+      if (retryCount >= maxRetries) {
+        console.error('[Map Debug] Failed to load Leaflet after ' + maxRetries + ' attempts');
+        console.error('[Map Debug] Check Network tab for /assets/leaflet/leaflet.js');
+        var mapEl = document.getElementById('journey-map');
+        if (mapEl) {
+          mapEl.innerHTML = '<div style="text-align: center; padding: 2em; opacity: 0.5; font-family: Inter, sans-serif;">' +
+                            '<div>Map library failed to load</div>' +
+                            '<div style="font-size: 0.85em; margin-top: 0.5em;">Check browser console for details</div>' +
+                            '</div>';
+        }
+        return;
+      }
+      
       setTimeout(initMap, 100);
       return;
     }
     
-    console.log('Initializing map with Leaflet version:', L.version);
+    console.log('[Map Debug] Leaflet loaded successfully! Version:', L.version);
     
     // Hide loading indicator
     var loadingEl = document.getElementById('map-loading');
