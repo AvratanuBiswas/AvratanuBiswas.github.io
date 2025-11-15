@@ -111,8 +111,6 @@ marp: false
 }
 </style>
 
----
-
 <div class="research-embed" style="margin-top: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
   <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQP3LTDbq3CT8Lj2sJcy7_8CMHmO4XipnY4VINiPpYlRh9Aghbt7mhKq9Cv3qFsnA/embed?start=false&loop=false&delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;"></iframe>
