@@ -16,8 +16,7 @@ marp: false
   </p>
 
   <p>
-    I joined Databutton in 2023 as an <strong>early team member</strong> when it was a 7-person startup. 
-    I contributed across technical support, product feedback, and early growth initiatives, helping scale the platform and onboard the first wave of builders. 
+    I joined Databutton in 2023 as an <strong>early team member</strong> when it was a 7-person startup, wearing many hats across technical support, developer relations, and early growth as we onboarded our first builders.
     Since then, we've raised our <a href="https://riff.ai/resources/blog/riff-raises-seriesA-16m-and-brings-business-ready-app-building-to-the-world" target="_blank"><strong>Series A</strong></a>, and I now focus fully on growth engineering.
   </p>
 
