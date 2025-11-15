@@ -28,8 +28,65 @@ Studied PSII-deficient mutants to uncover direct PBS → PSI pathways, revealing
 
 ---
 
-<div class="content" style="margin-top: 30px;">
+<div class="research-embed" style="margin-top: 30px;">
   <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQP3LTDbq3CT8Lj2sJcy7_8CMHmO4XipnY4VINiPpYlRh9Aghbt7mhKq9Cv3qFsnA/embed?start=false&loop=false&delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;"></iframe>
   </div>
 </div>
+
+<style>
+/* Research page styling - consistent with home */
+.page__content {
+  max-width: 800px !important;
+  margin: 0 auto !important;
+}
+
+.page__content h2 {
+  font-size: 2em !important;
+  margin-bottom: 1em !important;
+  margin-top: 1.5em !important;
+}
+
+.page__content p, .page__content li {
+  line-height: 1.8 !important;
+  margin-bottom: 1.5em !important;
+  font-size: 1.05em !important;
+}
+
+/* Softer link colors */
+.page__content a {
+  color: #2B6CB0 !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s ease;
+}
+
+.page__content a:hover {
+  text-decoration: none !important;
+  border-bottom: 1px solid #2B6CB0;
+}
+
+/* Bold text styling */
+.page__content strong {
+  font-weight: 600;
+  color: inherit;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .page__content a {
+    color: #63B3ED !important;
+  }
+  
+  .page__content a:hover {
+    border-bottom: 1px solid #63B3ED;
+  }
+}
+
+/* Research embed max width */
+.research-embed {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
