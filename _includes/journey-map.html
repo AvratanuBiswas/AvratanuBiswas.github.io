@@ -209,7 +209,9 @@
 
       // Perfect view showing all your journey
       setTimeout(function() {
-        var bounds = L.latLngBounds(locations.map(loc => [loc.lat, loc.lng]));
+        var bounds = L.latLngBounds(locations.map(function(loc) { 
+          return [loc.lat, loc.lng]; 
+        }));
         map.fitBounds(bounds, {
           padding: [100, 100],
           maxZoom: 4.5,
