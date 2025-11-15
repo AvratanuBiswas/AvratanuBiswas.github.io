@@ -406,11 +406,25 @@
     font-size: 0.9em;
   }
   
-  /* Ensure sidebar social links are completely hidden */
+  /* Hide sidebar social links on mobile - all themes */
   .sidebar .author__urls-wrapper,
-  .sidebar .author__urls {
+  .sidebar .author__urls,
+  .author__urls.social-icons,
+  aside .author__urls {
     display: none !important;
     visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+  
+  /* Also hide individual social items */
+  .sidebar li a[href*="mailto"],
+  .sidebar li a[href*="twitter"],
+  .sidebar li a[href*="linkedin"],
+  .sidebar li a[href*="github"],
+  .sidebar li a[href*="scholar"] {
+    display: none !important;
   }
 }
 </style>
