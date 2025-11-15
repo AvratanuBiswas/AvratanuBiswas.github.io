@@ -1,13 +1,21 @@
 <!-- Journey Map with Leaflet -->
 <div class="journey-map-container">
-  <div id="journey-map" style="height: 500px; width: 100%; border-radius: 8px; overflow: hidden;"></div>
+  <div id="journey-map" style="height: 500px; width: 100%; border-radius: 8px; overflow: hidden;">
+    <div id="map-loading" style="display: flex; align-items: center; justify-content: center; height: 100%; opacity: 0.5;">
+      <div>Loading map...</div>
+    </div>
+  </div>
 </div>
 
 <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+      crossorigin="anonymous" />
 
 <!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+        crossorigin="anonymous"></script>
 
 <script>
 (function() {
@@ -17,6 +25,14 @@
       console.log('Leaflet not loaded yet, retrying...');
       setTimeout(initMap, 100);
       return;
+    }
+    
+    console.log('Initializing map with Leaflet version:', L.version);
+    
+    // Hide loading indicator
+    var loadingEl = document.getElementById('map-loading');
+    if (loadingEl) {
+      loadingEl.style.display = 'none';
     }
     
     try {
@@ -35,15 +51,44 @@
       // Check if dark mode is active
       var isDarkMode = sessionStorage.getItem('theme') === 'dark';
       
-      // Choose tile layer based on theme
+      // Choose tile layer based on theme with fallback
       var tileUrl = isDarkMode 
         ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
         : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
       
+      var fallbackTileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+      
+      console.log('Loading tile layer:', tileUrl);
+      
       var tileLayer = L.tileLayer(tileUrl, {
         attribution: '',
-        maxZoom: 19
+        maxZoom: 19,
+        crossOrigin: true,
+        errorTileUrl: fallbackTileUrl
       }).addTo(map);
+      
+      // Track tile errors and switch to fallback if needed
+      var tileErrorCount = 0;
+      tileLayer.on('tileerror', function(error) {
+        tileErrorCount++;
+        console.warn('Tile loading error (count: ' + tileErrorCount + '):', error);
+        
+        // If too many tile errors, switch to fallback
+        if (tileErrorCount > 10) {
+          console.log('Switching to fallback tile provider (OpenStreetMap)');
+          map.removeLayer(tileLayer);
+          tileLayer = L.tileLayer(fallbackTileUrl, {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 19,
+            crossOrigin: true
+          }).addTo(map);
+          tileErrorCount = 0; // Reset counter
+        }
+      });
+      
+      tileLayer.on('load', function() {
+        console.log('Map tiles loaded successfully');
+      });
       
       // Function to update map theme dynamically
       window.updateMapTheme = function(theme) {
@@ -52,11 +97,19 @@
           ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
           : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
         
+        console.log('Updating map theme to:', theme, 'with tiles:', newTileUrl);
+        
         map.removeLayer(tileLayer);
         tileLayer = L.tileLayer(newTileUrl, {
           attribution: '',
-          maxZoom: 19
+          maxZoom: 19,
+          crossOrigin: true
         }).addTo(map);
+        
+        // Add error handling for new tile layer
+        tileLayer.on('tileerror', function(error) {
+          console.error('Tile loading error (theme update):', error);
+        });
         
         // Update label colors based on theme
         var isDark = theme === 'dark';
@@ -167,7 +220,14 @@
     
     } catch(error) {
       console.error('Map initialization error:', error);
-      document.getElementById('journey-map').innerHTML = '<div style="text-align: center; padding: 2em; opacity: 0.5;">Map could not load</div>';
+      console.error('Error stack:', error.stack);
+      var mapEl = document.getElementById('journey-map');
+      if (mapEl) {
+        mapEl.innerHTML = '<div style="text-align: center; padding: 2em; opacity: 0.5; font-family: Inter, sans-serif;">' +
+                          '<div>Map could not load</div>' +
+                          '<div style="font-size: 0.85em; margin-top: 0.5em;">Check console for details</div>' +
+                          '</div>';
+      }
     }
   }
   

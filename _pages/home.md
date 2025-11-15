@@ -11,14 +11,14 @@ marp: false
   <h1>Hi, I'm Avra.</h1>
 
   <p>
-    I'm Growth Engineer at <a href="https://riff.ai" target="_blank">Riff</a> (formerly Databutton), 
-    building and running the growth stack with a focus on fast iterations and measurable outcomes.
+    I'm a Growth Engineer at <a href="https://riff.ai" target="_blank">Riff</a> (formerly Databutton), 
+    building and running the growth stack with a focus on fast iterations, clear metrics, and measurable outcomes.
   </p>
 
   <p>
-    Joined Databutton in 2023 as an early team member when it was a 7-person startup in the middle of rapid growth. 
-    Worked across the stack, from dev relations and technical support to growth engineering, 
-    helping scale the platform and onboard the first wave of builders.
+    Joined Databutton in 2023 as an early team member when it was a 7-person startup. 
+    I worked across support, debugging, product feedback, and growth to help scale the platform and onboard our first builders. 
+    We've since raised our Series A, and I now focus fully on building and running our growth stack.
   </p>
 
   <p>
