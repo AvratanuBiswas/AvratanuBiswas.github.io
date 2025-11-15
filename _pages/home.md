@@ -17,7 +17,7 @@ marp: false
 
   <p>
     Joined Databutton in 2023 as an early team member when it was a 7-person startup. 
-    I worked across support, debugging, product feedback, and growth to help scale the platform and onboard our first builders. 
+    I contributed across technical support, product feedback, and early growth initiatives, helping scale the platform and onboard the first wave of builders. 
     We've since raised our Series A, and I now focus fully on building and running our growth stack.
   </p>
 
