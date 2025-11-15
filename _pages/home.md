@@ -90,4 +90,4 @@ marp: false
 
 {% include journey-map.html %}
 
-<script data-goatcounter="https://avrab.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://avra42.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
