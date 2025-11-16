@@ -1,0 +1,122 @@
+/* ==========================================================================
+   ENHANCED SIDEBAR - Better fonts, hierarchy, and colors
+   ========================================================================== */
+
+/* Profile image enhancement */
+.author__avatar img {
+  border: 3px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+  }
+}
+
+/* Name styling - make it pop */
+.author__name {
+  font-family: 'Inter', $sans-serif !important;
+  font-size: 1.4em !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 0.5em !important;
+  color: $text-color !important;
+  
+  @include breakpoint($large) {
+    font-size: 1.5em !important;
+  }
+}
+
+/* Bio text - better readability */
+.author__bio {
+  font-family: 'Inter', $sans-serif !important;
+  font-size: 0.85em !important;
+  line-height: 1.6 !important;
+  color: $text-color !important;
+  opacity: 0.75 !important;
+  font-weight: 400 !important;
+  margin-bottom: 1.2em !important;
+  
+  @include breakpoint($large) {
+    font-size: 0.9em !important;
+  }
+}
+
+/* Location styling */
+.author__urls li:first-child {
+  padding: 8px 12px !important;
+  margin-bottom: 0.8em !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-radius: 8px !important;
+  font-size: 0.85em !important;
+  
+  i {
+    color: $text-color !important;
+    opacity: 0.6 !important;
+  }
+}
+
+/* Social links enhancement */
+.author__urls a {
+  font-family: 'Inter', $sans-serif !important;
+  font-size: 0.85em !important;
+  font-weight: 500 !important;
+  padding: 9px 12px !important;
+  margin-bottom: 6px !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  transition: all 0.2s ease !important;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    transform: translateX(2px);
+    opacity: 1 !important;
+  }
+  
+  i {
+    opacity: 0.7 !important;
+    color: $text-color !important;
+    margin-right: 10px !important;
+  }
+}
+
+/* Light mode adjustments */
+@media (prefers-color-scheme: light) {
+  .author__avatar img {
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+    
+    &:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+    }
+  }
+  
+  .author__urls li:first-child {
+    background: rgba(0, 0, 0, 0.02) !important;
+  }
+  
+  .author__urls a {
+    background: rgba(0, 0, 0, 0.02) !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+    
+    &:hover {
+      background: rgba(0, 0, 0, 0.04) !important;
+      border-color: rgba(0, 0, 0, 0.12) !important;
+    }
+  }
+}
+
+/* Spacing improvements */
+.sidebar {
+  @include breakpoint($large) {
+    padding-top: 0.5em !important;
+  }
+}
+
+.author__content {
+  margin-bottom: 1.5em !important;
+}
+
