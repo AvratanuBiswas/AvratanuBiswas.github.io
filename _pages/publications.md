@@ -5,6 +5,8 @@ permalink: /publications/
 excerpt: "Peer-reviewed publications in biophysics, photosynthesis, and cyanobacteria research. 10+ papers on energy transfer and spectroscopy."
 description: "Academic publications by Avratanu Biswas on photosynthesis, excitation energy transfer, cyanobacteria, and biophysical spectroscopy. Published in leading journals during PhD research."
 author_profile: true
+robots: noindex, follow
+sitemap: false
 ---
 
 {% if site.author.googlescholar %}

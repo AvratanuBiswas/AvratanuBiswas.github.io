@@ -23,23 +23,58 @@
       </nav>
       {% if site.minimal_mistakes_skin2 %}
         <span class="togglefa">
-          <i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
-          <i class="fa fa-toggle-on" aria-hidden="true" onclick="node1=document.getElementById('theme_source');node2=document.getElementById('theme_source_2');var newTheme;if(node1.getAttribute('rel')=='stylesheet'){node1.setAttribute('rel', 'stylesheet alternate'); node2.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'dark');newTheme='dark';document.querySelector('.theme-icon-light').style.opacity='0.3';document.querySelector('.theme-icon-dark').style.opacity='1';}else{node2.setAttribute('rel', 'stylesheet alternate'); node1.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'light');newTheme='light';document.querySelector('.theme-icon-light').style.opacity='1';document.querySelector('.theme-icon-dark').style.opacity='0.3';} if(typeof window.updateMapTheme==='function'){window.updateMapTheme(newTheme);} return false;"></i>
-          <i class="fas fa-moon theme-icon-dark" aria-hidden="true"></i>
+          <i class="fas fa-sun theme-icon-light" aria-hidden="true" onclick="toggleTheme()" style="cursor: pointer;"></i>
+          <i class="fa fa-toggle-on" aria-hidden="true" onclick="toggleTheme()" style="cursor: pointer;"></i>
+          <i class="fas fa-moon theme-icon-dark" aria-hidden="true" onclick="toggleTheme()" style="cursor: pointer;"></i>
         </span>
+        <script>
+          function toggleTheme() {
+            var node1 = document.getElementById('theme_source');
+            var node2 = document.getElementById('theme_source_2');
+            var toggleIcon = document.querySelector('.fa-toggle-on');
+            var newTheme;
+            
+            if(node1.getAttribute('rel')=='stylesheet'){
+              node1.setAttribute('rel', 'stylesheet alternate'); 
+              node2.setAttribute('rel', 'stylesheet');
+              sessionStorage.setItem('theme', 'dark');
+              newTheme='dark';
+              document.querySelector('.theme-icon-light').style.opacity='0.3';
+              document.querySelector('.theme-icon-dark').style.opacity='1';
+              if(toggleIcon) toggleIcon.style.transform = 'scaleX(-1)';
+            } else {
+              node2.setAttribute('rel', 'stylesheet alternate'); 
+              node1.setAttribute('rel', 'stylesheet');
+              sessionStorage.setItem('theme', 'light');
+              newTheme='light';
+              document.querySelector('.theme-icon-light').style.opacity='1';
+              document.querySelector('.theme-icon-dark').style.opacity='0.3';
+              if(toggleIcon) toggleIcon.style.transform = 'scaleX(1)';
+            }
+            
+            if(typeof window.updateMapTheme==='function'){
+              window.updateMapTheme(newTheme);
+            }
+            
+            return false;
+          }
+        </script>
         <script>
           // Set initial icon state based on current theme
           window.addEventListener('DOMContentLoaded', function() {
             var theme = sessionStorage.getItem('theme');
             var lightIcon = document.querySelector('.theme-icon-light');
             var darkIcon = document.querySelector('.theme-icon-dark');
+            var toggleIcon = document.querySelector('.fa-toggle-on');
             
             if(theme === 'dark') {
               if (lightIcon) lightIcon.style.opacity = '0.3';
               if (darkIcon) darkIcon.style.opacity = '1';
+              if (toggleIcon) toggleIcon.style.transform = 'scaleX(-1)';
             } else {
               if (lightIcon) lightIcon.style.opacity = '1';
               if (darkIcon) darkIcon.style.opacity = '0.3';
+              if (toggleIcon) toggleIcon.style.transform = 'scaleX(1)';
             }
             
             // Highlight active navigation item
@@ -126,6 +161,13 @@
   }
   .togglefa .fa-toggle-on {
     font-size: 1.1em;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Flip toggle when in dark mode */
+  body.dark-mode .togglefa .fa-toggle-on,
+  .theme-dark .togglefa .fa-toggle-on {
+    transform: scaleX(-1);
   }
   .masthead__menu {
     display: flex;
