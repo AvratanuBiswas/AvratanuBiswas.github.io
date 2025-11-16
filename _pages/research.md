@@ -21,7 +21,7 @@ marp: false
 
   <p>
     Research focused on picosecond-scale excitation energy transfer in cyanobacteria (<em>Anabaena</em>, <em>Synechocystis</em>). 
-    As a <strong>Marie Curie Early-stage Researcher</strong> in the <a href="http://se2b.eu/" target="_blank">Se2B</a> Horizon 2020 program, used <strong>time-resolved fluorescence spectroscopy</strong> (TCSPC, streak camera) on isolated complexes and intact cells to track energy movement under varying conditions.
+    As a <strong>Marie Curie Early-stage Researcher</strong> in the Se2B Horizon 2020 program, used <strong>time-resolved fluorescence spectroscopy</strong> (TCSPC, streak camera) on <a href="https://link.springer.com/article/10.1007/s11120-020-00723-0" target="_blank">isolated complexes and intact cells</a> to track energy movement under varying conditions.
   </p>
 
   <p>
@@ -30,12 +30,12 @@ marp: false
   </p>
 
   <p>
-    Studied PSII-deficient mutants to uncover direct PBS → PSI pathways, revealing alternative light-harvesting strategies.
+    <a href="https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1300532/full" target="_blank">Studied PSII-deficient mutants to uncover direct PBS → PSI pathways</a>, revealing alternative light-harvesting strategies.
   </p>
 
   <p>
     <strong>Output:</strong> <strong>10+ peer-reviewed publications</strong><br>
-    <strong>Thesis:</strong> <a href="https://doktori.bibl.u-szeged.hu/id/eprint/12304/" target="_blank" class="thesis-link">Read my thesis →</a><br>
+    <strong>Thesis:</strong> <a href="https://doktori.bibl.u-szeged.hu/id/eprint/12304/" target="_blank" class="thesis-link">Read my thesis ↗</a><br>
     <strong>Publications:</strong> <a href="https://scholar.google.com/citations?user=bTzfXH0AAAAJ&hl=en" target="_blank">Google Scholar</a>
   </p>
 
@@ -97,6 +97,18 @@ marp: false
 .content strong {
   font-weight: 600;
   color: inherit;
+}
+
+/* Style the arrow to be smaller and more subtle */
+.content a[href*="doktori.bibl.u-szeged.hu"] {
+  white-space: nowrap;
+}
+
+.content a[href*="doktori.bibl.u-szeged.hu"]::after {
+  display: inline-block;
+  font-size: 0.85em;
+  margin-left: 0.1em;
+  opacity: 0.7;
 }
 
 /* Dark mode adjustments */

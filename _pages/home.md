@@ -26,7 +26,7 @@ marp: false
     <a href="https://www.szbk.u-szeged.hu/en/" target="_blank">Biological Research Centre in Szeged</a>. 
     My research focused on photosynthesis and energy transfer in cyanobacteria using time-resolved spectroscopy and kinetic modeling. 
     I've published over ten peer-reviewed papers. 
-    <a href="https://doktori.bibl.u-szeged.hu/id/eprint/12304/" target="_blank" class="thesis-link">Read my thesis →</a>
+    <a href="https://doktori.bibl.u-szeged.hu/id/eprint/12304/" target="_blank" class="thesis-link">Read my thesis ↗</a>
   </p>
 
 </div>
@@ -68,6 +68,22 @@ marp: false
 .thesis-link {
   font-weight: 500;
   display: inline-block;
+}
+
+.thesis-link::after {
+  content: '';
+}
+
+/* Style the arrow to be smaller and more subtle */
+.content a[href*="doktori.bibl.u-szeged.hu"] {
+  white-space: nowrap;
+}
+
+.content a[href*="doktori.bibl.u-szeged.hu"]::after {
+  display: inline-block;
+  font-size: 0.85em;
+  margin-left: 0.1em;
+  opacity: 0.7;
 }
 
 /* Bold text styling */
