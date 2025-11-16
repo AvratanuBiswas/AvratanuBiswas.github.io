@@ -38,10 +38,6 @@ marp: false
     <strong>Thesis:</strong> <a href="https://doktori.bibl.u-szeged.hu/id/eprint/12304/" target="_blank" class="thesis-link">Read my thesis ↗</a><br>
     <strong>Publications:</strong> <a href="https://scholar.google.com/citations?user=bTzfXH0AAAAJ&hl=en" target="_blank">Google Scholar</a>
   </p>
-
-  <p>
-    <strong>Technical skills:</strong> Time-resolved spectroscopy, fluorescence kinetics, kinetic modeling, MATLAB, Python, TCSPC, streak camera, scientific computing
-  </p>
 </div>
 
 <style>
