@@ -25,7 +25,6 @@ marp: false
     <a href="https://vu.nl" target="_blank">Vrije Universiteit Amsterdam</a> and the 
     <a href="https://www.szbk.u-szeged.hu/en/" target="_blank">Biological Research Centre in Szeged</a>. 
     My research focused on photosynthesis and energy transfer in cyanobacteria using time-resolved spectroscopy and kinetic modeling. 
-    I've published over ten peer-reviewed papers. 
     <a href="https://doktori.bibl.u-szeged.hu/id/eprint/12304/" target="_blank" class="thesis-link">Read my thesis ↗</a>
   </p>
 
