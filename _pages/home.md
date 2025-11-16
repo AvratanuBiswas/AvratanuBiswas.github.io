@@ -51,9 +51,9 @@ marp: false
   font-size: 1.05em !important;
 }
 
-/* Softer link colors */
+/* Action blue link colors */
 .content a {
-  color: #2B6CB0 !important;
+  color: #0102EE !important;
   text-decoration: none !important;
   border-bottom: 1px solid transparent;
   transition: border-bottom 0.2s ease;
@@ -61,7 +61,7 @@ marp: false
 
 .content a:hover {
   text-decoration: none !important;
-  border-bottom: 1px solid #2B6CB0;
+  border-bottom: 1px solid #0102EE;
 }
 
 /* Thesis CTA styling */
@@ -79,11 +79,11 @@ marp: false
 /* Dark mode adjustments */
 @media (prefers-color-scheme: dark) {
   .content a {
-    color: #63B3ED !important;
+    color: #5B8DFF !important;
   }
   
   .content a:hover {
-    border-bottom: 1px solid #63B3ED;
+    border-bottom: 1px solid #5B8DFF;
   }
 }
 </style>
