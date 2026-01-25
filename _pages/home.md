@@ -9,6 +9,7 @@ marp: false
 
 <div class="content">
   <h1 class="hero-headline">Hi, I'm Avra.</h1>
+  <p class="hero-tagline">Researcher → Builder. AI & code.</p>
 
   <p>
     I joined <a href="https://riff.ai" target="_blank">Riff</a> (formerly Databutton) in 2023 as an early hire when it was a 7-person startup. 
@@ -30,7 +31,17 @@ marp: false
 /* Hero headline */
 .hero-headline {
   font-size: 2.5em !important;
-  margin-bottom: 0.8em !important;
+  margin-bottom: 0.3em !important;
+}
+
+/* Hero tagline */
+.hero-tagline {
+  font-size: 1.2em !important;
+  margin-bottom: 1.5em !important;
+  margin-top: 0 !important;
+  opacity: 0.75;
+  font-weight: 400;
+  color: inherit;
 }
 
 /* Content container - optimal reading width */
