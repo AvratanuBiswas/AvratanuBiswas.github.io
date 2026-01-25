@@ -11,8 +11,9 @@ marp: false
   <h1 class="hero-headline">Hi, I'm Avra.</h1>
 
   <p>
-    I joined <a href="https://riff.ai" target="_blank">Riff</a> (formerly Databutton) in 2023 as an <strong>early team member</strong> when it was a 7-person startup. 
-    Since then, we've raised our <a href="https://riff.ai/resources/blog/riff-raises-seriesA-16m-and-brings-business-ready-app-building-to-the-world" target="_blank"><strong>Series A</strong></a>, and I now focus fully on <strong>growth engineering</strong>, where I build and run the growth stack with a focus on fast iterations, clear metrics, and measurable outcomes.
+    I joined <a href="https://riff.ai" target="_blank">Riff</a> (formerly Databutton) in 2023 as an early hire when it was a 7-person startup. 
+    Helped build the growth stack from scratch while the company raised <a href="https://riff.ai/resources/blog/riff-raises-seriesA-16m-and-brings-business-ready-app-building-to-the-world" target="_blank"><strong>€14M Series A led by Northzone</strong></a>. 
+    Focused on fast iteration, instrumentation, and running experiments that actually moved metrics.
   </p>
 
   <p>
@@ -20,7 +21,7 @@ marp: false
     <a href="https://vu.nl" target="_blank">Vrije Universiteit Amsterdam</a> and the 
     <a href="https://www.szbk.u-szeged.hu/en/" target="_blank">Biological Research Centre in Szeged</a>. 
     My research focused on photosynthesis and energy transfer in cyanobacteria using time-resolved spectroscopy and kinetic modeling. 
-    <a href="https://doktori.bibl.u-szeged.hu/id/eprint/12304/" target="_blank" class="thesis-link">Read my thesis ↗</a>
+    <a href="https://www.proquest.com/openview/1fe7520d6b8ef328d0cb0a0e67ceb7f2/1?pq-origsite=gscholar&cbl=2026366&diss=y" target="_blank" class="thesis-link">Read my thesis</a>.
   </p>
 
 </div>
@@ -84,6 +85,18 @@ marp: false
 .content strong {
   font-weight: 600;
   color: inherit;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero-headline {
+    margin-top: 0.5em !important;
+    font-size: 2em !important;
+  }
+  
+  .content {
+    margin-top: 0 !important;
+  }
 }
 
 /* Dark mode adjustments */

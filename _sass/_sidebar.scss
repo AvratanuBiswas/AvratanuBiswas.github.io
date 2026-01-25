@@ -274,41 +274,45 @@
   a {
     display: flex;
     align-items: center;
-    margin-bottom: 6px;
-    padding: 10px 12px;
+    margin-bottom: 4px;
+    padding: 6px 0;
     color: $text-color;
-    font-size: 0.8em;
+    font-size: 0.85em;
     text-decoration: none;
-    border-radius: 6px;
-    transition: opacity 0.2s ease;
-    opacity: 0.85;
+    border-radius: 0;
+    transition: all 0.2s ease;
+    opacity: 0.7;
     min-height: 44px;
+    border-left: 2px solid transparent;
+    padding-left: 8px;
 
     @include breakpoint($medium) {
-      padding: 8px 10px;
+      padding: 6px 0 6px 8px;
       font-size: 0.875em;
       min-height: auto;
     }
 
     @include breakpoint($large) {
-      padding: 6px 8px;
+      padding: 5px 0 5px 8px;
+      font-size: 0.85em;
     }
 
     &:hover {
-      color: $link-color;
       opacity: 1;
+      border-left-color: $link-color;
     }
     
     i {
       margin-right: 10px;
-      width: 22px;
+      width: 18px;
       text-align: center;
-      opacity: 0.75;
+      opacity: 0.8;
       flex-shrink: 0;
+      font-size: 0.95em;
 
       @include breakpoint($large) {
-        width: 20px;
-        margin-right: 8px;
+        width: 18px;
+        margin-right: 10px;
       }
     }
   }

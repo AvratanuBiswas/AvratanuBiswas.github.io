@@ -18,10 +18,11 @@
 
 <style>
 .journey-map-container {
-  margin: 4em 0 10em;
+  margin: 4em auto 10em;
   padding: 0;
   background: transparent;
   border: none;
+  max-width: 800px;
 }
 
 #journey-map {
@@ -29,6 +30,13 @@
   border: 1px solid rgba(0, 0, 0, 0.08);
   position: relative;
   z-index: 1;
+}
+
+/* Dark mode map border */
+@media (prefers-color-scheme: dark) {
+  #journey-map {
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
 }
 
 /* Ensure footer is above map */

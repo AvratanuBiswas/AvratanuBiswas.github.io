@@ -208,18 +208,45 @@
         }
       });
 
-      // Perfect view showing all your journey
+      // Perfect view showing all your journey - responsive
       setTimeout(function() {
         var bounds = L.latLngBounds(locations.map(function(loc) { 
           return [loc.lat, loc.lng]; 
         }));
+        
+        // Adjust padding and zoom based on screen size
+        var isMobile = window.innerWidth <= 768;
+        var isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
+        
+        var padding = isMobile ? [40, 40] : (isTablet ? [60, 60] : [100, 100]);
+        var maxZoom = isMobile ? 3.5 : (isTablet ? 4 : 4.5);
+        
         map.fitBounds(bounds, {
-          padding: [100, 100],
-          maxZoom: 4.5,
+          padding: padding,
+          maxZoom: maxZoom,
           animate: true,
           duration: 0.8
         });
       }, 100);
+      
+      // Re-adjust on window resize
+      window.addEventListener('resize', function() {
+        var bounds = L.latLngBounds(locations.map(function(loc) { 
+          return [loc.lat, loc.lng]; 
+        }));
+        
+        var isMobile = window.innerWidth <= 768;
+        var isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
+        
+        var padding = isMobile ? [40, 40] : (isTablet ? [60, 60] : [100, 100]);
+        var maxZoom = isMobile ? 3.5 : (isTablet ? 4 : 4.5);
+        
+        map.fitBounds(bounds, {
+          padding: padding,
+          maxZoom: maxZoom,
+          animate: false
+        });
+      });
     
     } catch(error) {
       console.error('[Map Debug] Map initialization error:', error);
