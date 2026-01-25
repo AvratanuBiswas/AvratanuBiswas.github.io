@@ -67,7 +67,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : "author_avatar/Avra-2 copy.jpg"  # Open Graph/Twitter default site image
+og_image                 : "author_avatar/avra-new-pp.jpeg"  # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -90,7 +90,7 @@ analytics:
 # Site Author
 author:
   name             : "Avratanu Biswas"
-  avatar           : "author_avatar/Avra-2 copy.jpg"
+  avatar           : "author_avatar/avra-new-pp.jpeg"
   bio              : "Growth Engineer at Riff | PhD Biophysics"
   location         : "Oslo, Norway"
   employer         :
