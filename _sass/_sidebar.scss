@@ -112,6 +112,8 @@
     display: block;
     border: 3px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
 
     @media (min-width: 480px) {
       width: 140px;
