@@ -12,8 +12,8 @@ marp: false
   <p class="hero-tagline">Researcher → Builder. AI & code.</p>
 
   <p>
-    I joined <a href="https://riff.ai" target="_blank">Riff</a> (formerly Databutton) in 2023 as an early hire when it was a 7-person startup. 
-    Helped build the growth stack from scratch while the company raised <a href="https://riff.ai/resources/blog/riff-raises-seriesA-16m-and-brings-business-ready-app-building-to-the-world" target="_blank"><strong>€14M Series A led by Northzone</strong></a>. 
+    I joined <strong><a href="https://riff.ai" target="_blank">Riff</a> </strong>(formerly Databutton) in 2023 as an early hire when it was a 7-person startup. 
+    Helped build the growth stack from scratch while the company raised <a href="https://riff.ai/resources/blog/riff-raises-seriesA-16m-and-brings-business-ready-app-building-to-the-world" target="_blank">€14M Series A led by Northzone</a>. 
     Focused on fast iteration, instrumentation, and running experiments that actually moved metrics.
   </p>
 
