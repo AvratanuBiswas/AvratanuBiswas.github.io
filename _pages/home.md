@@ -25,7 +25,7 @@ marp: false
   </p>
 
   <p>
-    My research focused on photosynthesis and energy transfer in cyanobacteria, using time-resolved spectroscopy and kinetic modeling. 
+    <a href="/research/">My research</a> focused on photosynthesis and energy transfer in cyanobacteria, using time-resolved spectroscopy and kinetic modeling. 
     <a href="https://www.proquest.com/openview/1fe7520d6b8ef328d0cb0a0e67ceb7f2/1?pq-origsite=gscholar&cbl=2026366&diss=y" target="_blank" class="thesis-link">Read my thesis</a>.
   </p>
 

@@ -69,13 +69,18 @@
             setThemeIcon(sessionStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
 
             // Disable greedy-nav: with 2 links + flex layout its measurements
-            // are wrong and it hides the whole menu. Restore anything it moved.
-            if (typeof window.updateNav === 'function') window.updateNav = function() {};
+            // are wrong and it hides the whole menu. Its updateNav lives in a
+            // closure (fires on every resize), so restore continuously via a
+            // MutationObserver instead of a one-time move.
             var hid = document.querySelector('#site-nav .hidden-links');
             var vis = document.querySelector('#site-nav .visible-links');
             if (hid && vis) {
-              while (hid.firstElementChild) { vis.appendChild(hid.firstElementChild); }
-              hid.classList.add('hidden');
+              var restore = function() {
+                while (hid.firstElementChild) { vis.appendChild(hid.firstElementChild); }
+                hid.classList.add('hidden');
+              };
+              restore();
+              new MutationObserver(restore).observe(hid, { childList: true });
             }
 
             // Highlight active navigation item
