@@ -11,6 +11,18 @@ body {
   margin: 0;
   padding: 0;
   padding-bottom: 6em;
+
+  /* expose per-theme accent so inline page styles adapt to the theme toggle */
+  --content-link: #{$link-color};
+  --content-link-hover: #{$link-color-hover};
+  --masthead-bg: #{$background-color};
+  --masthead-fg: #{$text-color};
+  --hairline: #{rgba($text-color, 0.1)};
+
+  /* fixed footer stacks vertically below 480px and gets taller */
+  @media (max-width: 480px) {
+    padding-bottom: 8em;
+  }
   color: $text-color;
   font-family: $global-font-family;
   line-height: 1.75;
@@ -18,7 +30,13 @@ body {
   min-height: 100vh;
 
   @include breakpoint($medium) {
-    padding-bottom: 5em;
+    /* matches fixed footer height so no stray gap shows below the panel */
+    padding-bottom: 4.25em;
+  }
+
+  /* desktop: reserve exactly the 52px fixed footer, no stray gap */
+  @media (min-width: 925px) {
+    padding-bottom: 52px;
   }
 
   &.overflow--hidden {

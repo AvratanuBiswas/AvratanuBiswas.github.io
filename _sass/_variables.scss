@@ -14,7 +14,7 @@ $indent-var                 : 1.3em;
 
 /* system typefaces */
 $serif                      : "Merriweather", Georgia, "Times New Roman", serif;
-$sans-serif                 : -apple-system, "Inter", "SF Pro Display", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+$sans-serif                 : "Inter", -apple-system, "SF Pro Display", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
 $monospace                  : "JetBrains Mono", Monaco, Consolas, "Courier New", monospace;
 
 /* sans serif typefaces */
@@ -29,7 +29,7 @@ $calisto                    : "Calisto MT", serif;
 $garamond                   : Garamond, serif;
 $merriweather               : "Merriweather", Georgia, serif;
 
-$global-font-family         : $serif;
+$global-font-family         : $sans-serif;
 $header-font-family         : $sans-serif;
 $caption-font-family        : $sans-serif;
 
@@ -54,11 +54,12 @@ $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
 $lighter-gray               : #f8f4ec;
 
-$body-color                 : #fefcf5;
-$background-color           : #fefcf5;
-$code-background-color      : #f5f0e8;
-$code-background-color-dark : #ede7dc;
-$text-color                 : #2d2d2d;
+$body-color                 : #ffffff;
+$background-color           : #ffffff;
+$panel-color                : #fafafa;
+$code-background-color      : #f5f5f5;
+$code-background-color-dark : #ededed;
+$text-color                 : #1f1f1f;
 $border-color               : #2563eb;
 $masthead-color             : #212121;
 
@@ -92,7 +93,7 @@ $xing-color                 : #006567;
 
 
 /* links */
-$link-color                 : $info-color;
+$link-color                 : #0102EE;
 $link-color-hover           : #1d4ed8;
 $link-color-visited         : #3b82f6;
 $masthead-link-color        : $primary-color;

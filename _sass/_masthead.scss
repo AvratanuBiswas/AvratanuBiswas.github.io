@@ -3,9 +3,9 @@
    ========================================================================== */
 
 .masthead {
-  background-color: #212121;
+  background-color: $background-color;
   position: relative;
-  border-bottom: 2px solid rgba(254, 252, 245, 0.15);
+  border-bottom: 1px solid rgba($text-color, 0.1);
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;
   -webkit-animation-delay: 0.15s;

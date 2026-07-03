@@ -19,11 +19,11 @@
   max-width: 100%;
 
   @include breakpoint($medium) {
-    background: rgba(255, 255, 255, 0.02);
-    padding: 1.5em;
+    background: transparent;
+    padding: 1em 0;
     margin-bottom: 2em;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0;
+    border: none;
   }
 
   @include breakpoint($large) {

@@ -14,7 +14,7 @@ $indent-var                 : 1.3em;
 
 /* system typefaces */
 $serif                      : "Merriweather", Georgia, "Times New Roman", serif;
-$sans-serif                 : -apple-system, "Inter", "SF Pro Display", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+$sans-serif                 : "Inter", -apple-system, "SF Pro Display", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
 $monospace                  : "JetBrains Mono", Monaco, Consolas, "Courier New", monospace;
 
 /* sans serif typefaces */
@@ -29,7 +29,7 @@ $calisto                    : "Calisto MT", serif;
 $garamond                   : Garamond, serif;
 $merriweather               : "Merriweather", Georgia, serif;
 
-$global-font-family         : $serif;
+$global-font-family         : $sans-serif;
 $header-font-family         : $sans-serif;
 $caption-font-family        : $sans-serif;
 
@@ -54,11 +54,12 @@ $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
 $lighter-gray               : mix(#fff, $gray, 90%);
 
-$body-color                 : #212121;
-$background-color           : #212121;
+$body-color                 : #1a1a1a;
+$background-color           : #1a1a1a;
+$panel-color                : #161616;
 $code-background-color      : mix(#000, $background-color, 15%);
 $code-background-color-dark : mix(#000, $background-color, 20%);
-$text-color                 : #eaeaea;
+$text-color                 : #dedede;
 $border-color               : rgba(254, 252, 245, 0.15);
 $masthead-color             : #212121;
 

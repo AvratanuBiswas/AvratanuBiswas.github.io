@@ -46,11 +46,13 @@ marp: false
   display: none !important;
 }
 
-/* Page title styling - match home hero AND alignment */
+/* Page title styling - match home hero (calm) */
 .page__title {
-  font-size: 2.5em !important;
-  margin-bottom: 0.8em !important;
-  font-weight: 700 !important;
+  font-size: 1.5em !important;
+  margin-bottom: 1em !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.02em !important;
   max-width: 800px !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -64,29 +66,30 @@ marp: false
 
 /* Paragraph styling */
 .content p {
-  line-height: 1.8 !important;
-  margin-bottom: 1.8em !important;
-  font-size: 1.05em !important;
+  line-height: 1.75 !important;
+  margin-bottom: 1.6em !important;
+  font-size: 1em !important;
 }
 
 /* Heading styling */
 .content h2 {
-  font-size: 2em !important;
+  font-size: 1.2em !important;
+  font-weight: 600 !important;
   margin-bottom: 1em !important;
   margin-top: 1.5em !important;
 }
 
-/* Action blue link colors */
+/* Quiet monochrome links - text color with a subtle underline */
 .content a {
-  color: #0102EE !important;
+  color: inherit !important;
   text-decoration: none !important;
-  border-bottom: 1px solid transparent;
-  transition: border-bottom 0.2s ease;
+  border-bottom: 1px solid rgba(127, 127, 127, 0.4);
+  transition: border-color 0.2s ease;
 }
 
 .content a:hover {
   text-decoration: none !important;
-  border-bottom: 1px solid #0102EE;
+  border-bottom-color: currentColor;
 }
 
 /* Bold text styling */
@@ -105,17 +108,6 @@ marp: false
   font-size: 0.85em;
   margin-left: 0.1em;
   opacity: 0.7;
-}
-
-/* Dark mode adjustments */
-@media (prefers-color-scheme: dark) {
-  .content a {
-    color: #5B8DFF !important;
-  }
-  
-  .content a:hover {
-    border-bottom: 1px solid #5B8DFF;
-  }
 }
 </style>
 

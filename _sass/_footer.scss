@@ -18,27 +18,23 @@
   -webkit-animation-delay: 0.45s;
           animation-delay: 0.45s;
   background-color: $background-color;
-  border-top: 2px solid rgba(254, 252, 245, 0.15);
+  border-top: 1px solid rgba($text-color, 0.1);
   z-index: 100;
 
   footer {
     @include clearfix;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
+    margin: 0;
     max-width: 100%;
-    padding: 0.75em 1em;
+    padding: 0.9em 1.25em;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 
-    @include breakpoint($medium) {
-      padding: 1em 1.5em;
-    }
-
-    @include breakpoint($x-large) {
-      max-width: $x-large;
+    /* desktop: fixed 52px bar mirroring the masthead */
+    @media (min-width: 925px) {
+      height: 52px;
+      padding: 0 1.25em;
     }
   }
 
@@ -61,8 +57,8 @@
 
 .page__footer-copyright {
   font-family: $global-font-family;
-  font-size: $type-size-8;
-  opacity: 0.7;
+  font-size: 0.75em;
+  opacity: 0.55;
 }
 
 .page__footer-follow {
@@ -128,16 +124,16 @@
     height: 42px;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.08);
+    background: none;
     color: $text-color;
     text-decoration: none;
-    font-size: 1em;
-    transition: background 0.2s ease;
+    font-size: 0.9em;
+    opacity: 0.45;
+    transition: opacity 0.2s ease;
   }
-  
+
   .mobile-social-icons a:hover {
-    background: rgba(255, 255, 255, 0.12);
+    opacity: 1;
   }
   
   .mobile-social-icons a i {
