@@ -159,7 +159,7 @@ marp: false
     started = true;
     var i = 0;
     var timer = setInterval(function() {
-      i += 2; // two chars per tick
+      i += 2; /* two chars per tick */
       pre.textContent = text.slice(0, i);
       if (i >= text.length) {
         clearInterval(timer);

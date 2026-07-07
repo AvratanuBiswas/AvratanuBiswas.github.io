@@ -29,7 +29,9 @@
           <i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
         </button>
         <script>
-          // Single-icon toggle: shows the mode you would switch TO
+          /* Single-icon toggle: shows the mode you would switch TO.
+             NOTE: inline scripts get collapsed to one line by the compress
+             layout — never use // line comments in them. */
           function setThemeIcon(theme) {
             var moon = document.querySelector('.theme-icon-dark');
             var sun = document.querySelector('.theme-icon-light');
@@ -68,10 +70,10 @@
           window.addEventListener('DOMContentLoaded', function() {
             setThemeIcon(sessionStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
 
-            // Disable greedy-nav: with 2 links + flex layout its measurements
-            // are wrong and it hides the whole menu. Its updateNav lives in a
-            // closure (fires on every resize), so restore continuously via a
-            // MutationObserver instead of a one-time move.
+            /* Disable greedy-nav: with 2 links + flex layout its measurements
+               are wrong and it hides the whole menu. Its updateNav lives in a
+               closure (fires on every resize), so restore continuously via a
+               MutationObserver instead of a one-time move. */
             var hid = document.querySelector('#site-nav .hidden-links');
             var vis = document.querySelector('#site-nav .visible-links');
             if (hid && vis) {
@@ -83,7 +85,7 @@
               new MutationObserver(restore).observe(hid, { childList: true });
             }
 
-            // Highlight active navigation item
+            /* Highlight active navigation item */
             var currentPath = window.location.pathname;
             var navLinks = document.querySelectorAll('.masthead__menu-item a');
             navLinks.forEach(function(link) {
