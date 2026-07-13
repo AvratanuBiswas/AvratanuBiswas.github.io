@@ -338,3 +338,24 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
   -webkit-transition: $global-transition;
   transition: $global-transition;
 }
+
+/*
+   Circle cursor (agencies.no-style), themed via $text-color
+   ========================================================================== */
+
+@function cursor-color-enc($c) {
+  @return "%23" + str-slice("#{$c}", 2);
+}
+
+html,
+body {
+  cursor: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='14'%20height='14'%20viewBox='0%200%2014%2014'%3E%3Ccircle%20cx='7'%20cy='7'%20r='6'%20fill='#{cursor-color-enc($text-color)}'/%3E%3C/svg%3E") 7 7, auto;
+}
+
+a,
+button,
+.togglefa,
+label,
+select {
+  cursor: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%3E%3Ccircle%20cx='10'%20cy='10'%20r='8'%20fill='none'%20stroke='#{cursor-color-enc($text-color)}'%20stroke-width='2.5'/%3E%3C/svg%3E") 10 10, pointer;
+}
