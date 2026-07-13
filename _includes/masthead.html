@@ -143,6 +143,9 @@
     color: var(--masthead-fg, white);
     text-decoration: none;
     font-size: 0.9em;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
     opacity: 0.6;
     transition: opacity 0.2s ease;
     padding: 0.5em 0;
@@ -173,16 +176,24 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    align-self: center;
     margin-left: auto;
     cursor: pointer;
     font-size: 0.85em;
+    line-height: 1;
     flex-shrink: 0;
     background: none;
     border: none;
     padding: 0.6em;
-    margin-left: 0.5em;
+    margin: 0 0 0 0.5em;
     opacity: 0.45;
     transition: opacity 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .togglefa i {
+    line-height: 1;
+    display: block;
   }
   .togglefa:hover,
   .togglefa:focus-visible {
