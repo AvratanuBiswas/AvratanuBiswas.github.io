@@ -1,0 +1,22 @@
+# Avratanu Biswas
+
+> Personal site of Avratanu Biswas (Avra) — co-founder & CTO at avei (VC-backed), building Dagny (bydagny.com), AI to run and grow your business. Based in Oslo, Norway.
+
+## About
+
+- Currently: Co-founder & CTO at avei (https://avei.ai), building Dagny (https://www.bydagny.com) — AI to run and grow your business.
+- Previously: Early team member at Riff, formerly Databutton (https://riff.ai), through its $16M Series A and the scale-up that followed.
+- Academia: PhD in Biophysics from Vrije Universiteit Amsterdam and the Biological Research Centre in Szeged (graduated summa cum laude). Marie Curie Early-stage Researcher. Research focused on picosecond-scale excitation energy transfer in cyanobacterial photosynthesis, using time-resolved fluorescence spectroscopy and kinetic compartment modeling. 10+ peer-reviewed publications.
+
+## Pages
+
+- [Home](https://avratanu.com/): Who I am and what I'm building.
+- [Research](https://avratanu.com/research/): PhD research summary — photosynthesis, energy transfer, spectroscopy, kinetic modeling.
+
+## Links
+
+- Email: avra42@gmail.com
+- X/Twitter: https://x.com/Avra_b
+- LinkedIn: https://www.linkedin.com/in/avra-biswas-708616b7
+- GitHub: https://github.com/avrabyt
+- Google Scholar: https://scholar.google.com/citations?user=bTzfXH0AAAAJ
