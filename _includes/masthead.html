@@ -5,22 +5,12 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         <ul class="visible-links">
-          {% unless page.url == "/" %}
-          <li class="masthead__menu-item masthead__menu-item--back"><a href="{{ base_path }}/"><span aria-hidden="true">&larr;</span>&nbsp; Home</a></li>
-          {% endunless %}
-          {% for link in site.data.navigation.main %}
-          <!-- Don't show the ones exclude -->
-          <!-- https://stackoverflow.com/questions/25452429/excluding-page-from-jekyll-navigation-bar -->
-            {% unless link.exclude %} 
-              {% if link.url contains 'http' %}
-                {% assign domain = '' %}
-              {% else %}
-                {% assign domain = base_path %}
-              {% endif %}
-              <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-            {% endunless %}
-          {% endfor %}                                
-        </ul> 
+          {% if page.url == "/" %}
+            <li class="masthead__menu-item"><a href="{{ base_path }}/research/">Research</a></li>
+          {% else %}
+            <li class="masthead__menu-item"><a href="{{ base_path }}/">Home</a></li>
+          {% endif %}
+        </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
       {% if site.minimal_mistakes_skin2 %}
