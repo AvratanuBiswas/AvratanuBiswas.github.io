@@ -14,7 +14,7 @@ marp: false
   </div>
 
   <p>
-    Currently co-founder &amp; CTO at <strong><a href="https://avei.ai" target="_blank">avei</a></strong> (VC-backed) - building <strong><a href="https://www.bydagny.com" target="_blank">byDagny.com</a></strong>, AI to run and grow your business.
+    Currently co-founder &amp; CTO at <strong><a href="https://avei.ai" target="_blank">avei</a></strong> (VC-backed) - building <strong><a href="https://www.bydagny.com" target="_blank">Dagny</a></strong>, AI to run and grow your business.
   </p>
 
   <p>
