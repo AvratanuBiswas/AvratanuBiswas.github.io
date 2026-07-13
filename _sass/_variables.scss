@@ -13,9 +13,9 @@ $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
 /* system typefaces */
-$serif                      : "Merriweather", Georgia, "Times New Roman", serif;
-$sans-serif                 : "Inter", -apple-system, "SF Pro Display", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
-$monospace                  : "JetBrains Mono", Monaco, Consolas, "Courier New", monospace;
+$serif                      : "Instrument Serif", Georgia, "Times New Roman", serif;
+$sans-serif                 : "Geist", -apple-system, "SF Pro Display", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+$monospace                  : "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
 /* sans serif typefaces */
 $sans-serif-narrow          : $sans-serif;

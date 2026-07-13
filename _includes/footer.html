@@ -1,22 +1,21 @@
 {% include base_path %}
 
-<!-- Mobile social icons (right-aligned) -->
-<div class="mobile-social-icons">
+<div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}.</div>
+
+<ul class="footer-links">
   {% if site.author.email %}
-    <a href="mailto:{{ site.author.email }}" title="Email"><i class="fas fa-envelope"></i></a>
-  {% endif %}
-  {% if site.author.linkedin %}
-    <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
-  {% endif %}
-  {% if site.author.github %}
-    <a href="https://github.com/{{ site.author.github }}" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
-  {% endif %}
-  {% if site.author.googlescholar %}
-    <a href="{{ site.author.googlescholar }}" title="Google Scholar" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+    <li><a href="mailto:{{ site.author.email }}">email</a></li>
   {% endif %}
   {% if site.author.twitter %}
-    <a href="https://twitter.com/{{ site.author.twitter }}" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+    <li><a href="https://x.com/{{ site.author.twitter }}" target="_blank" rel="noopener">x</a></li>
   {% endif %}
-</div>
-
-<div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. </div>
+  {% if site.author.linkedin %}
+    <li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener">linkedin</a></li>
+  {% endif %}
+  {% if site.author.github %}
+    <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">github</a></li>
+  {% endif %}
+  {% if site.author.googlescholar %}
+    <li><a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener">scholar</a></li>
+  {% endif %}
+</ul>

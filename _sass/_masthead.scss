@@ -16,7 +16,8 @@
     @include container;
     @include clearfix;
     padding: 0.75em 1em;
-    font-family: $sans-serif-narrow;
+    font-family: $monospace;
+    font-size: 0.85em;
 
     @include breakpoint($medium) {
       padding: 1em 1.5em;
@@ -57,6 +58,6 @@
 
   &--lg {
     padding-right: 2em;
-    font-weight: 700;
+    font-weight: 500;
   }
 }

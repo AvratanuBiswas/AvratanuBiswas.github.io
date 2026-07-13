@@ -4,7 +4,7 @@ title: "Research"
 permalink: /research/
 excerpt: "PhD research in photosynthesis, energy transfer, and cyanobacteria. Marie Curie Fellow. 10+ peer-reviewed publications."
 description: "Avratanu Biswas' PhD research in Biophysics focused on picosecond-scale energy transfer in cyanobacterial photosynthesis using time-resolved spectroscopy and kinetic modeling. Marie Curie Early-stage Researcher, VU Amsterdam & Szeged."
-author_profile: true
+author_profile: false
 marp: false
 ---
 
@@ -46,13 +46,14 @@ marp: false
   display: none !important;
 }
 
-/* Page title styling - match home hero (calm) */
+/* Page title styling - match home hero (quiet serif display) */
 .page__title {
-  font-size: 1.5em !important;
-  margin-bottom: 1em !important;
-  font-weight: 600 !important;
-  line-height: 1.3 !important;
-  letter-spacing: -0.02em !important;
+  font-family: "Instrument Serif", Georgia, serif !important;
+  font-size: 2.4em !important;
+  margin-bottom: 0.75em !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.01em !important;
   max-width: 800px !important;
   margin-left: auto !important;
   margin-right: auto !important;

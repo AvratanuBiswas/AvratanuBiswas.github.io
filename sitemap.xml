@@ -10,7 +10,7 @@ layout: null
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  
+
   <!-- Research Page -->
   <url>
     <loc>{{ site.url }}/research/</loc>
@@ -18,5 +18,55 @@ layout: null
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>
 
+  <!-- Publications index -->
+  <url>
+    <loc>{{ site.url }}/publications/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Talks index -->
+  <url>
+    <loc>{{ site.url }}/talks/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Blog index -->
+  <url>
+    <loc>{{ site.url }}/cats-and-codes/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Blog posts -->
+  {% for post in site.posts %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+    <priority>0.5</priority>
+  </url>
+  {% endfor %}
+
+  <!-- Publications -->
+  {% for pub in site.publications %}
+  <url>
+    <loc>{{ site.url }}{{ pub.url }}</loc>
+    {% if pub.date %}<lastmod>{{ pub.date | date_to_xmlschema }}</lastmod>{% endif %}
+    <priority>0.5</priority>
+  </url>
+  {% endfor %}
+
+  <!-- Talks -->
+  {% for talk in site.talks %}
+  <url>
+    <loc>{{ site.url }}{{ talk.url }}</loc>
+    {% if talk.date %}<lastmod>{{ talk.date | date_to_xmlschema }}</lastmod>{% endif %}
+    <priority>0.4</priority>
+  </url>
+  {% endfor %}
+</urlset>
