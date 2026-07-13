@@ -1,0 +1,48 @@
+{% include base_path %}
+
+<meta charset="utf-8">
+
+{% include seo.html %}
+{% include seo-enhancements.html %}
+
+<link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- Webfonts: Geist (body/UI), Geist Mono (meta labels), Instrument Serif (display) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" id="theme_source">
+
+{% if site.minimal_mistakes_skin2 %}
+  <link rel="stylesheet alternate" href="{{ '/assets/css/theme2.css' | relative_url }}" id="theme_source_2">
+  <script>
+    let theme = sessionStorage.getItem('theme');
+    if(theme === "dark")
+    {
+      sessionStorage.setItem('theme', 'dark');
+      node1 = document.getElementById('theme_source');
+      node2 = document.getElementById('theme_source_2');
+      node1.setAttribute('rel', 'stylesheet alternate'); 
+      node2.setAttribute('rel', 'stylesheet');
+    }
+    else
+    {
+      sessionStorage.setItem('theme', 'light');
+    }
+  </script>
+{% endif %}
+
+<meta name="google-site-verification" content="W52C6IdOU8vrh2NWeoKN1elDDuVGiC42yJeM0c_LxcM" />
+
+<meta http-equiv="cleartype" content="on">

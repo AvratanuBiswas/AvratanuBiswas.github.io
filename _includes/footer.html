@@ -1,0 +1,21 @@
+{% include base_path %}
+
+<div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}.</div>
+
+<ul class="footer-links">
+  {% if site.author.email %}
+    <li><a href="mailto:{{ site.author.email }}">email</a></li>
+  {% endif %}
+  {% if site.author.twitter %}
+    <li><a href="https://x.com/{{ site.author.twitter }}" target="_blank" rel="noopener">x</a></li>
+  {% endif %}
+  {% if site.author.linkedin %}
+    <li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener">linkedin</a></li>
+  {% endif %}
+  {% if site.author.github %}
+    <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">github</a></li>
+  {% endif %}
+  {% if site.author.googlescholar %}
+    <li><a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener">scholar</a></li>
+  {% endif %}
+</ul>

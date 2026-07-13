@@ -1,0 +1,32 @@
+<!-- Additional SEO Enhancements -->
+
+<!-- Open Graph type (og:site_name/locale and twitter tags come from seo.html) -->
+{% unless page.date %}
+<meta property="og:type" content="website">
+{% endunless %}
+
+<!-- Enhanced keywords for better discoverability -->
+<meta name="keywords" content="Avratanu Biswas, Avra Biswas, avei, byDagny, co-founder, CTO, AI agents, AI to run and grow your business, startup founder, Riff, Databutton, PhD Biophysics, Photosynthesis Research, Marie Curie Fellow, Time-resolved Spectroscopy, Kinetic Modeling, Python, VU Amsterdam, Oslo Norway">
+
+<!-- Professional/Academic specific meta -->
+<meta name="citation_author" content="Avratanu Biswas">
+<meta name="citation_title" content="{{ page.title | default: site.title }}">
+{% if page.date %}
+<meta name="citation_publication_date" content="{{ page.date | date: '%Y/%m/%d' }}">
+{% endif %}
+
+<!-- Additional discovery and verification -->
+<meta name="theme-color" content="#212121">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Geo meta for location -->
+<meta name="geo.position" content="59.9139;10.7522">
+<meta name="geo.placename" content="Oslo, Norway">
+<meta name="geo.region" content="NO">
+
+<!-- Performance hints -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://avra42.goatcounter.com">
+

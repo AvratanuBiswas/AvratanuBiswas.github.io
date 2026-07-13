@@ -1,0 +1,215 @@
+{% include base_path %}
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">    
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <ul class="visible-links">
+          {% if page.url == "/" %}
+            <li class="masthead__menu-item"><a href="{{ base_path }}/research/">Research</a></li>
+          {% else %}
+            <li class="masthead__menu-item"><a href="{{ base_path }}/">Home</a></li>
+          {% endif %}
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+      {% if site.minimal_mistakes_skin2 %}
+        <button class="togglefa" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <i class="fas fa-moon theme-icon-dark" aria-hidden="true"></i>
+          <i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
+        </button>
+        <script>
+          /* Single-icon toggle: shows the mode you would switch TO.
+             NOTE: inline scripts get collapsed to one line by the compress
+             layout — never use // line comments in them. */
+          function setThemeIcon(theme) {
+            var moon = document.querySelector('.theme-icon-dark');
+            var sun = document.querySelector('.theme-icon-light');
+            if (!moon || !sun) return;
+            moon.style.display = theme === 'dark' ? 'none' : 'inline-block';
+            sun.style.display = theme === 'dark' ? 'inline-block' : 'none';
+          }
+
+          function toggleTheme() {
+            var node1 = document.getElementById('theme_source');
+            var node2 = document.getElementById('theme_source_2');
+            var newTheme;
+
+            if(node1.getAttribute('rel')=='stylesheet'){
+              node1.setAttribute('rel', 'stylesheet alternate');
+              node2.setAttribute('rel', 'stylesheet');
+              sessionStorage.setItem('theme', 'dark');
+              newTheme='dark';
+            } else {
+              node2.setAttribute('rel', 'stylesheet alternate');
+              node1.setAttribute('rel', 'stylesheet');
+              sessionStorage.setItem('theme', 'light');
+              newTheme='light';
+            }
+
+            setThemeIcon(newTheme);
+
+            if(typeof window.updateMapTheme==='function'){
+              window.updateMapTheme(newTheme);
+            }
+
+            return false;
+          }
+        </script>
+        <script>
+          window.addEventListener('DOMContentLoaded', function() {
+            setThemeIcon(sessionStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
+
+            /* Disable greedy-nav: with 2 links + flex layout its measurements
+               are wrong and it hides the whole menu. Its updateNav lives in a
+               closure (fires on every resize), so restore continuously via a
+               MutationObserver instead of a one-time move. */
+            var hid = document.querySelector('#site-nav .hidden-links');
+            var vis = document.querySelector('#site-nav .visible-links');
+            if (hid && vis) {
+              var restore = function() {
+                while (hid.firstElementChild) { vis.appendChild(hid.firstElementChild); }
+                hid.classList.add('hidden');
+              };
+              restore();
+              new MutationObserver(restore).observe(hid, { childList: true });
+            }
+
+            /* Highlight active navigation item */
+            var currentPath = window.location.pathname;
+            var navLinks = document.querySelectorAll('.masthead__menu-item a');
+            navLinks.forEach(function(link) {
+              var linkPath = link.getAttribute('href');
+              if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) {
+                link.style.opacity = '1';
+              }
+            });
+          });
+        </script>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .masthead {
+    background-color: var(--masthead-bg, #212121);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .masthead__inner-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--masthead-bg, #212121);
+    padding: 0 1.25em !important;
+    width: 100%;
+    max-width: 100% !important;
+    height: 52px;
+  }
+  .greedy-nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    background-color: var(--masthead-bg, #212121);
+  }
+  .visible-links {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 1.5em;
+    flex: 1;
+  }
+  .visible-links li {
+    display: block !important;
+    width: auto !important;
+    margin-right: 0;
+  }
+  /* back link stays left; nav links sit on the right next to the toggle */
+  .masthead__menu-item--back {
+    margin-right: auto !important;
+  }
+  .masthead__menu-item--back a {
+    opacity: 0.55;
+  }
+  .masthead__menu-item--back a:hover {
+    opacity: 1;
+  }
+  .masthead__menu-item a {
+    color: var(--masthead-fg, white);
+    text-decoration: none;
+    font-size: 0.9em;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+    padding: 0.5em 0;
+    font-weight: 500;
+    outline: none;
+  }
+  .masthead__menu-item a:hover {
+    opacity: 1;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+  .masthead__menu-item a:focus {
+    outline: none;
+  }
+  .masthead__menu-item--lg a {
+    font-size: 0.95em;
+    font-weight: 600;
+    opacity: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .visible-links {
+      gap: 1em;
+    }
+  }
+  .togglefa {
+    color: var(--masthead-fg, white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 0.85em;
+    line-height: 1;
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    padding: 0.6em;
+    margin: 0 0 0 0.5em;
+    opacity: 0.45;
+    transition: opacity 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .togglefa i {
+    line-height: 1;
+    display: block;
+  }
+  .togglefa:hover,
+  .togglefa:focus-visible {
+    opacity: 1;
+  }
+  .togglefa:focus {
+    outline: none;
+  }
+  /* default to light mode (moon shown); JS corrects on load */
+  .togglefa .theme-icon-light {
+    display: none;
+  }
+  .masthead__menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: var(--masthead-bg, #212121);
+  }
+</style>
