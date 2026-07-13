@@ -27,15 +27,6 @@ layout: null
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog posts -->
-  {% for post in site.posts %}
-  <url>
-    <loc>{{ site.url }}{{ post.url }}</loc>
-    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-    <priority>0.5</priority>
-  </url>
-  {% endfor %}
-
   <!-- Publications -->
   {% for pub in site.publications %}
   <url>
